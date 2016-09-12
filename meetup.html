@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Let's Meetup Bro</title>
+</head>
+
+<body>
+
+
+	<label for="textInput">Search Something: </label>
+	<input type="text" name="text" id="textInput">
+	<br>
+	<br>
+	<label for="locationInput">Location: </label>
+	<input type="text" name="location" id="locationInput">
+	<br>
+	<br>
+	<label for="resultsNumInput">Amount of Results: </label>
+	<input type="text" name="location" id="resultsNumInput">
+	<br>
+	<br>
+	<br>
+	<button>Search</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+	$('button').on('click', function(){
+
+		var text = $("#textInput").val().trim();
+		var location = $("#locationInput").val().trim();
+		var amountOfResults = $("#resultsNumInput").val().trim();
+
+		var coordinates = [];
+
+		// category: Comma-delimited list of numeric category ids
+
+		// country: A valid two character country code, defaults to US
+
+		// fallback_suggestions: Boolean indicator of whether or not to return a list of curated suggestions for groups if we can't find groups matching your criteria
+
+		// fields: Request that additional fields (separated by commas) be included in the output.
+
+		// filter: Determines which groups are returned. If 'all' (default), the text and category parameters are applied. If 'friends', groups your friends are in are returned. The value of this parameter may be one of all, friends
+
+		// lat: Approximate latitude
+
+		// location: Raw text location query
+
+		// lon: Approximate longitude
+
+		// radius: Radius in miles. May be 0.0-100.0, 'global' or 'smart', a dynamic radius based on the number of active groups in the area. Defaults to member's preferred radius
+
+		// self_groups: Set to 'include' or 'exclude' Meetups the authorized member belongs to; default is 'include'
+
+		// text: Raw full text search query
+
+		// topic_id: Comma-delimited list of numeric topic ids
+
+		// upcoming_events: If true, filters text and category based searches on groups that have upcoming events. Defaults to false
+
+		// zip: Zipcode of location to limit search to
+
+	    var queryURL = "https://api.meetup.com/find/groups?&sign=true&photo-host=public&filter=all&upcoming_events=true&fallback_suggestions=true&country=US&location="+location+"&radius=smart&text="+text+"&page="+amountOfResults+"&key=2b1e504a1c3ea586da4a465e6c5223";
+
+	    $.ajax({url: queryURL, method: 'GET', dataType: 'jsonp'})
+	     .done(function(response) {
+	         var results = response;
+	         coordinates = [];
+
+	         for (var i=0; i<amountOfResults; i++) {
+	         	coordinates.push([results.data[i].lat + ", " + results.data[i].lon]);
+	         	console.log(coordinates);
+		        //console.log(results.data[i]);
+		        //console.log(results.data[i].lat + ", " + results.data[i].lon);
+	         }
+	    }); 
+});
+</script>
+
+</body>
+
+</html>
