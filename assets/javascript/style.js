@@ -46,7 +46,7 @@ $(document).ready(function(){
 		$(this).siblings().children().children().children().addClass("portfolio-icon-shorten");
 		$(this).parent().parent().siblings().children().addClass("profile-pic-js");
 		$(this).parent().parent().parent().parent().siblings().children().children().addClass("wiggler")
-		// console.log($(this).parent().parent().parent().parent().siblings().children().children().addClass("wiggler"));
+		console.log($(this).parent().parent().parent().parent().siblings().children().children().addClass("wiggler"));
 	}).mouseleave(function(){
 		$(this).children().children().children().removeClass("portfolio-icon-enlarge")
 		$(this).siblings().children().children().children().removeClass("portfolio-icon-shorten");
