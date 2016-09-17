@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Group Project 1</title>
+	<!-- Reference to css reset sheet. -->	
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Reference to materilzie css sheet. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
+	<!-- Reference to main css sheet. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Ensures the page is mobile responsive. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!-- Left-fixed position that contains the logo, carousel image slider and collapsible info bar. Removes when the page strinks to or more than 768px.-->
+	<div class="myContainer hide-768px">
+		<a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' href='#modal3'><h5>Logo</h5></a>   
+
+		<!-- Carousel Image slider. -->
+		<div class="carousel carousel-slider myContainer-width-adjustment" data-indicators="true">
+			<div class="carousel-fixed-item center">
+				<a class="btn waves-effect waves-orange white grey-text darken-text-2">button</a>
+			</div>
+			<div class="carousel-item white-text" href="#one!">
+				<img class="image-placeholder" src="http://placehold.it/250x250">
+			</div>
+			<div class="carousel-item white-text" href="#one!">
+				<img class="image-placeholder" src="http://placehold.it/250x250">
+			</div>
+			<div class="carousel-item white-text" href="#one!">
+				<img class="image-placeholder" src="http://placehold.it/250x250">
+			</div>
+			<div class="carousel-item white-text" href="#one!">
+				<img class="image-placeholder" src="http://placehold.it/250x250">
+			</div>
+		</div> <!-- End of the Carousel Image Slider div. -->
+
+		<!-- Collapsible info bar. -->
+		<div>
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>
+					<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+					<div class="collapsible-body"><p class="text-justify">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit ametaskmd amskdm allaksmdwi maksdalor sit amet.Lorem ipsum dolor sit amet.Lorem kjnj njgjhgj dkaskdm oqwmdoqkwmd okfdmksg or sit amet.Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+			</ul>
+		</div> <!-- End of the collapsible info bar div. -->
+	</div> <!-- End of the myContainer div. -->
+
+	<!-- Container for the top bar which contains a search box and image box. -->
+	<div class="orange darken-2 topwrapper">
+
+		<!-- Modal 1 search box trigger. -->
+	    <a class="modal-trigger waves-effect waves-black" href="#modal1"><p class="iconsizer"><i class="small material-icons white-text icon-button icon-height-adjuster center">search</i></p></a>
+
+		<!-- Modal 2 image box trigger. -->
+	    <a class="modal-trigger waves-effect waves-black right" href="#modal2"><p class="iconsizer"><i class="small material-icons white-text icon-button icon-height-adjuster center">view_module</i></p></a>
+	</div> <!-- End of the top bar. -->
+	
+	<!-- Container for the google map api. -->
+	<div class="mapwrapper">
+
+		<!-- Google Map Space -->
+		<div id="map">		
+		</div>
+	</div>  <!-- End of google map api. -->
+
+	<!-- Container for the footer which contains our story, copyright and web creators. -->
+	<div class="footerwrapper">	
+		<footer class="orange darken-2 center footer">
+			<div class="row footer-margin-change">
+				
+				<!-- Modal 3 our story trigger. -->
+				<div class="col s3 orange darken-2 footer-margin-change">
+					<a class="modal-trigger waves-effect waves-black footer-modal-sizer footer-adjuster empty-typewriter-text" href="#modal3"><p><i class="small material-icons white-text footer-icon-height">info_outline</i></p></a>
+	 			</div>
+				
+				<!-- Copyright Section -->
+				<div class="col s6 orange darken-2 footer-margin-change copyright-border">
+					<p class="white-text footer-adjuster footer-margin-change footer-copyright-sizer copyright-height">© Copyright 2016</p>
+				</div>
+
+				<!-- Modal 4 web creators trigger -->
+				<div class="col s3 orange darken-2 footer-margin-change">
+					<a class="modal-trigger waves-effect waves-black footer-modal-sizer footer-adjuster" href="#modal4"><p><i class="small material-icons white-text footer-icon-height">perm_identity</i></p></a>
+	 			</div>				
+	 		</div>	
+		</footer>
+	</div> <!-- End of the footer container. -->	
+
+	<!-- Modal 1 Info. -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+	    	<h4 class="center orange-text text-darken-2">Change this header later</h4>
+			
+			<!-- Meetup api search form. -->
+			<form action="" method="">
+				<div class="row">
+
+					<!-- Search Input. -->
+					<div class="input-field col s6">
+			    		<input id="textInput" type="text">
+			    		<label for="textInput">Search text</label>
+					</div>
+					
+					<!-- Location Input. -->
+					<div class="input-field col s6">
+			    		<input id="locationInput" type="text">
+			    		<label for="locationInput">Location text</label>
+					</div>
+		
+					<!-- Range Input. -->
+					<div class="col s12">
+						<p class="center orange-text text-darken-2">How many input?</p>
+						<p class="range-field">
+							<input id="resultsNumInput" type="range" min="0" max="25" />
+						</p>
+					</div>
+
+<!-- 					<div class="input-field col s12">
+			    		<input id="resultsNumInput" type="text">
+			    		<label for="resultsNumInput">Number</label>
+					</div> -->
+					<!-- Preset Selections 1. -->
+					<div class="col s12 m6 l4">
+						<ul class="collection">
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Arts</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Book Clubs</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Career & Business</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Cars</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Dancing</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Education & Learning</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+						</ul>
+					</div> <!-- End of preset selections 1. -->
+	
+					<!-- Preset Selections 2. -->
+					<div class="col s12 m6 l4">
+						<ul class="collection">
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Fashion & Beauty</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Fitness</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Food & Drink</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Games</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Health & Wellbeing</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Lifestyle</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+						</ul>
+					</div> <!-- End of preset selections 2. -->
+	
+					<!-- Preset Selections 3. -->
+					<div class="col s12 m6 l4">
+						<ul class="collection">
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Politics</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Movies & Film</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Music</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Outdoors & Adventure</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Pets & Animals</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+							<li class="collection-item avatar modal-highlight">
+								<a href="#">
+									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
+								</a>
+								<span class="title">Photography</span>
+								<p>First Line</p>
+								<p>Second Line</p>
+								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+							</li>
+						</ul>
+					</div> <!-- End of preset selections 3. -->	
+				</div>
+			</form> <!-- End of meetup api search form. -->
+	    </div>
+		
+		<!-- Submit Modal Button. -->
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-orange btn-flat" id="searchBtn">Submit!</a>
+		</div>
+	</div> <!-- End of Modal 1 Info. -->
+
+
+	<!-- Modal 2 Info. -->
+	<div id="modal2" class="modal">
+		<div class="modal-content">
+			<h4 class="center">Modal Header</h4>
+			
+			<div class="row">
+				<!-- Start of meetup info card boxes. -->
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s6 m4 l3 center modal-card-margin">
+					<div class="card image-hover">
+						<!-- Current Meetup Image Container. -->
+						<div class="card-image waves-effect waves-block waves-black">
+							<img class="activator" src="http://placehold.it/275x250">
+						</div>
+						
+						<!-- Card title and weblink. -->
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+
+						<!-- Additional meetup info when card is revealed. -->
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div> <!-- End of meetup info card boxes. -->
+			</div>
+	    </div>
+
+		<!-- Close Modal. -->
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-action modal-close waves-effect waves-orange btn-flat ">Close</a>
+	    </div>
+	</div> <!-- End of Modal 2 Info. -->
+
+	<!-- Modal 3 Info. -->
+	<div id="modal3" class="modal bottom-sheet">
+		<div class="modal-content">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 text-justify typewriter">
+						<h4 class="center">Our Story</h4>
+						<!-- This p tag contains our story JS text input. -->
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Close Modal. -->
+		<div class="modal-footer">
+	    	<a href="#!" class="modal-action modal-close waves-effect waves-orange btn-flat">Close</a>
+		</div>
+	</div> <!-- End of Modal 3 Info. -->
+
+	<!-- Modal 4 Info -->
+	<div id="modal4" class="modal bottom-sheet">
+		<div class="row">
+			<div class="col 12 m12">
+				<h4 class="center">Meet the Creators!</h4>
+			</div>
+			
+			<!-- Start of creators info box. -->
+			<div class="col s12 m4 l3 offset-l1-5">
+				<div class="card profile-card">
+					<div class="card-image waves-effect waves-block waves-black">
+						<img class="activator profile-pic" src="assets/portfolio/pic.jpg">
+					</div>
+
+					<!-- Creator card box. -->
+					<div class="card-content">
+						<!-- Tuan Info. -->
+						<span class="card-title activator grey-text text-darken-4 card-title-changes name-font">Tuan Tran<i class="material-icons right">more_vert</i></span>
+						
+						<div class="row">
+
+							<!-- Github Link -->
+							<div class="col s4 red linkAnimation icon-margin-change">
+								<a class="portfolio-link" href="https://github.com/tuanqtran" target="_blank"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/github.png"></p></a>
+							</div>
+
+							<!-- Linkedin Link -->
+							<div class="col s4 green linkAnimation icon-margin-change portfolio-border">
+								<a href="https://www.linkedin.com/in/tranqtuan" target="_blank"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/linkedin.png"></p></a>
+							</div>
+
+							<!-- Twitter Link -->
+							<div class="col s4 blue linkAnimation icon-margin-change">
+								<a href="https://twitter.com/Tuan_QTran" target="_blank"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/twitter.png"></p></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Additional creator info. -->
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+						<p class="text-justify">Here is some more information about this product that is only revealed once clicked on. Here is some more information about this product that is only revealed once clicked on. Here is some more information about this product that is only revealed once clicked on.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m4 l3">
+				<div class="card profile-card">
+					<div class="card-image waves-effect waves-block waves-black">
+						<img class="activator profile-pic" src="assets/portfolio/pic.jpg">
+					</div>
+
+					<!-- Creator card box. -->
+					<div class="card-content">
+						<!-- Marcus Info. -->
+						<span class="card-title activator grey-text text-darken-4 card-title-changes name-font">Marcus Lam<i class="material-icons right">more_vert</i></span>
+						
+						<div class="row">
+
+							<!-- Github Link -->
+							<div class="col s4 red linkAnimation icon-margin-change">
+								<a class="portfolio-link" href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/github.png"></p></a>
+							</div>
+
+							<!-- Linkedin Link -->
+							<div class="col s4 green linkAnimation icon-margin-change portfolio-border">
+								<a href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/linkedin.png"></p></a>
+							</div>
+
+							<!-- Twitter Link -->
+							<div class="col s4 blue linkAnimation icon-margin-change">
+								<a href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/twitter.png"></p></a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Additional creator info. -->
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+						<p class="text-justify">Here is some more information about this product that is only revealed once clicked on.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m4 l3">
+				<div class="card profile-card">
+					<div class="card-image waves-effect waves-block waves-black">
+						<img class="activator profile-pic" src="assets/portfolio/pic.jpg">
+					</div>
+
+					<!-- Creator card box. -->
+					<div class="card-content">
+						<!-- Brandon Info. -->
+						<span class="card-title activator grey-text text-darken-4 card-title-changes name-font">Brandon Short<i class="material-icons right">more_vert</i></span>
+						
+						<div class="row">
+
+							<!-- Github Link -->
+							<div class="col s4 red linkAnimation icon-margin-change">
+								<a class="portfolio-link" href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/github.png"></p></a>
+							</div>
+
+							<!-- Linkedin Link -->
+							<div class="col s4 green linkAnimation icon-margin-change portfolio-border">
+								<a href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/linkedin.png"></p></a>
+							</div>
+
+							<!-- Twitter Link -->
+							<div class="col s4 blue linkAnimation icon-margin-change">
+								<a href="#"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/twitter.png"></p></a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Additional creator info. -->
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+						<p class="text-justify">Here is some more information about this product that is only revealed once clicked on.</p>
+					</div>
+				</div>
+			</div> <!-- End of creators info box. -->
+		</div>
+
+		<!-- Close Modal. -->
+		<div class="modal-footer">
+	    	<a href="#!" class=" modal-action modal-close waves-effect waves-black btn-flat">Close</a>
+		</div>
+	</div> <!-- End of Modal 4 Info. -->
+
+	<!-- Reference to jquery version 2.2.3. -->
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"
+	></script>
+	<!-- Reference to materialize javascript style sheet. -->
+	<script src="assets/javascript/materialize.js"></script>
+	<!-- Reference to javascript style sheet. -->
+	<script src="assets/javascript/style.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuj3o9FkNZuGQRckiKjVtHlybRDBRzofw&callback=initMap" async defer></script>
+	<script src="assets/javascript/api.js"></script>
+
+</body>
+</html>

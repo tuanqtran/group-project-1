@@ -13,16 +13,81 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	
+
+	<div class="orange">
+	    <div class="container">
+		    <div class="row marginReset">
+		        <div class="col s12">
+					<nav class="shadowRemove">
+						<div class="nav-wrapper orange">
+							<a href="#" class="brand-logo">Group Project</a>
+							<ul class="right hide-on-med-and-down">
+								<li><a href="#">Characters</a></li>
+								<li><a href="#">Google Map</a></li>
+								<li><a href="#">About Us</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>	    
+		    </div>    
+	    </div>
+	</div>
+
+  	<div class="carousel carousel-slider center" data-indicators="true">
+  	  	<div class="carousel-fixed-item center">
+  	    	<a class="btn waves-effect white grey-text darken-text-2">button</a>
+  	  	</div>
+    	<a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+    	<a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+  	</div>
+
+	<div class="clear"></div>
+
+
+	<section>
+		<div class="row">
+			<div class="col s12">	
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/parallax1.jpg"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/parallax2.jpg"></div>
+  </div>
+			</div>
+		</div>
+	</section>
 
 
 
+
+
+
+
+<div class="block">
+</div>
+
+<button>BUTTON</button>
+<!--  -->
 	<!-- Reference to jquery version 2.2.3. -->
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"
 	></script>
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<!-- Reference to javascript style sheet. -->
-	<script type="text/javascript" src="assets/javascript/style.js"></script>	
+	<script type="text/javascript" src="assets/javascript/style.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.carousel.carousel-slider').carousel({full_width: true});
+			$('.parallax').parallax();
+			$('.slider').slider({full_width: true});
+		});	
+	</script>
 </body>
 </html>
