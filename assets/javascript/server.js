@@ -1,9 +1,5 @@
   var config = {
-      apiKey: "AIzaSyAolUMI028Apuhg3bFvYgHJ-iPOISTZeJ0",
-      authDomain: "group-project-1-89c7e.firebaseapp.com",
-      databaseURL: "https://group-project-1-89c7e.firebaseio.com",
-      storageBucket: "group-project-1-89c7e.appspot.com",
-      messagingSenderId: "347336096905"
+
   };
   firebase.initializeApp(config);
 
