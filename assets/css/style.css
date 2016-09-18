@@ -809,6 +809,7 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	.name-font{
 		font-size: 18px !important;
 	}
+
 }
 
 @media screen and (max-width: 993px){
@@ -829,7 +830,7 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 */
 	.row .col.offset-l1-5 {
-		margin-left: 0px;
+		margin-left: 0%;
 	}
 
 /*
@@ -884,6 +885,17 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 
 /*
 ================================================================================================
+		Readds the preset margin to ensure to center to create a modified offset-s1.
+================================================================================================
+*/
+@media screen and (max-width:640px){
+	.row .col.offset-l1-5 {
+		margin-left: 8.3333333333%;
+	}
+}
+
+/*
+================================================================================================
 ================================================================================================
 
         							 End of Media Queries.
@@ -901,3 +913,34 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 ================================================================================================
 */
+
+
+.thumbUp, .fakeThumbDown{
+	position: absolute;
+	z-index: 1;
+	-webkit-animation: wiggler 2s;
+    animation: wiggler 2s;
+}
+
+.thumbUp{
+	top: 15px;
+	right: 100px;
+}
+
+.fakeThumbDown{
+	top: 12px;
+	right: 15px;
+	-webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+}
+
+.fakeThumbDown:hover{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
