@@ -14,12 +14,39 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         scrollwheel: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map'],
         center: new google.maps.LatLng(39.8282, -98.5795)
     });
     geocoder = new google.maps.Geocoder;
     infowindow = new google.maps.InfoWindow;
+  //   var styledMapType = new google.maps.StyledMapType(
+		// [
+		// 	{
+		// 		stylers: [
+		// 			{ hue: '#000' },
+		// 			{ saturation: 0 }
+		// 		]
+		// 	},{
+		// 		featureType: 'road',
+		// 		elementType: 'geometry',
+		// 		stylers: [
+		// 			{ lightness: 100 },
+		// 			{ visibility: 'simplified' }
+		// 		]
+		// 	},{
+		// 		featureType: 'road',
+		// 		elementType: 'labels',
+		// 		stylers: [
+		// 			{ visibility: 'off' }
+		// 		]
+		// 	}
+		// ],
+		// {name: 'Styled Map'});
+
+  //   map.mapTypes.set('styled_map', styledMapType);
+  //   map.setMapTypeId('styled_map');
 };
+
 // Beginning of the click event that triggers the queries between the Meetup API and Google Maps API.
 $('#searchBtn').on('click', function() {
 	// var loading_screen = pleaseWait({
@@ -86,3 +113,39 @@ $('#searchBtn').on('click', function() {
 	// setTimeout(loading_screen.finish.bind(loading_screen), 5000);
 	
 }); // End of the click event.
+
+
+
+$(document).ready(function() {
+
+	$.simpleWeather({
+		location: 'Austin, TX',
+		unit: 'f',
+
+	success: function(weather) {
+		html = '<img class="" src='+weather.image+'>';
+		html += '<p>Today Weather</p>'
+		html += '<div class="tempwrapper"><h3 id="currenttemp">'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
+		html += '<div class="smalltempwrapper"><p id="hightemp">'+ "H: " +weather.high+'&deg;F</p><p id="lowtemp">'+ "L: " +weather.low+'&deg;F</p></div></div>';
+
+		html += '<ul><li id="weatherFullWidth">'+weather.city+', '+weather.region+'</li>';
+		html += '<li id="weatherLeftHalf">'+weather.currently+'</li>';
+		html += '<li id="weatherRightHalf">Humidity: '+weather.humidity+'%</li>';
+		html += '</ul> <p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p>'
+		// html += '<img class="logoimg" src="assets/images/logo.png">';
+		
+		for(var i=0;i<5;i++) {
+			html += '<img class="weatherimg" src=' + weather.forecast[i].thumbnail + '><p class="weatherimg">' + weather.forecast[i].day + ':' + weather.forecast[i].high + '</p>';
+		}
+
+		html += '<a id="weatherLink" href="' + weather.link + '">Full Forecast Here</a>';
+
+		$("#weather").html(html);
+
+	},
+
+		error: function(error) {
+			$("#weather").html('<p>'+error+'</p>');
+		}
+	});
+});

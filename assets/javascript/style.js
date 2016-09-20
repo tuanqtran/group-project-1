@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	// Materialize: Required to use collapse the sideNav.
-	$(".button-collapse").sideNav();
+	$('.button-collapse').sideNav({
+    	menuWidth: 300, // Default is 240
+    	edge: 'left', // Choose the horizontal origin
+    	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
+
 	// Materialize: Required for the carousel slider to have full width.
 	$('.carousel.carousel-slider').carousel({full_width: true});
 	// Materialize: Required to open a modal using a trigger.
@@ -9,8 +14,9 @@ $(document).ready(function(){
     $('input#input_text, textarea#textarea1').characterCounter();
     // Materialize: Requried if the collapsible info are added dynamically. You can also pass in options inside the initialization.
     $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-});
+    	accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+	});
+
 
     // Upon hovering over a modal2 images, expand the main modal and strink/blur the rest. When the mouse leaves reset to normal.
 	$(".image-hover").mouseover(function(){

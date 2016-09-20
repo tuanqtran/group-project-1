@@ -22,6 +22,9 @@
 	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
 ================================================================================================
 */
+.invisible{
+	display: none;
+}
 .row .col.offset-l1-5 {
 	margin-left: 12.49999999995%;
 }
@@ -32,14 +35,32 @@
 ================================================================================================
 */
 .myContainer{
+	/*background-color: white;*/
 	background-color: #fff3e0;
 	max-width: 300px;
 	height: 100%;
 	position: fixed;
 	float: left;
+
 }
 
+.logoimg{
+	/*position: absolute;*/
+	position: relative;
+	width: 150px;
+	height: 75px;
+	top: -12px;
+	left: 0px;
+}
 
+/*Logo for bottom right*/
+/*.logoimg{
+	position: absolute;
+	width: 167px;
+	height: 100px;
+	bottom: 50px;
+	right: 0px;
+}*/
 /*
 ================================================================================================
 			 Provides the content within the myContainer to fill in the space.
@@ -76,6 +97,14 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	right: 0;
 }
 
+.movedown{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	background-color: #f57c00;
+	border-right: 1px solid white;
+
+}
 /*
 ================================================================================================
 				  Pushes the bar to the top and given a fixed height of 50px. 
@@ -848,9 +877,10 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 /*
 ================================================================================================
 						   Removes the left container box from the page. 
+						       Removes the icon from the portfolio.
 ================================================================================================
 */
-	.hide-768px{
+	.hide-768px, .card-content i{
 		display: none;
 	}
 
@@ -874,11 +904,11 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 
 /*
 ================================================================================================
-							 Removes the icon from the portfolio.
+							 Need to fix this
 ================================================================================================
 */
-	.card-content i{
-		display: none;
+	.invisible{
+		display: initial;
 	}
 
 }
@@ -913,21 +943,19 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 ================================================================================================
 */
-
-
-.thumbUp, .fakeThumbDown{
+#fireBaseThumbUp, #firebaseFakeThumbDown{
 	position: absolute;
 	z-index: 1;
 	-webkit-animation: wiggler 2s;
     animation: wiggler 2s;
 }
 
-.thumbUp{
+#fireBaseThumbUp{
 	top: 15px;
 	right: 100px;
 }
 
-.fakeThumbDown{
+#firebaseFakeThumbDown{
 	top: 12px;
 	right: 15px;
 	-webkit-transition: 2s;
@@ -937,10 +965,114 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
     transition: 2s;
 }
 
-.fakeThumbDown:hover{
+#firebaseFakeThumbDown:hover{
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+
+
+#weather {
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+	text-align: center;
+	text-transform: uppercase;
+	/*background: #1192d3 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/austin-2.jpg) no-repeat bottom right;*/
+}
+
+#weather ul {
+  margin-top: 100px;
+  border-top: 1px solid black;
+}
+
+#weather li {
+  /*background: rgba(0, 46, 76 , .2);*/
+  padding: 20px 0;
+  /*border-bottom: 1px solid black;*/
+  float: left;
+  /*width: 100%;*/
+  /*display: inline-block;*/
+  /*border-radius: 5px;*/
+}
+
+#weatherFullWidth{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#weatherLeftHalf, #weatherRightHalf{
+	border-bottom: 1px solid black;
+}
+
+#weatherLeftHalf, #weatherRightHalf{
+	width: 50%;
+	border-top: 1px solid black;
+}
+
+#weatherLeftHalf{
+	border-right: 1px solid black;
+}
+
+#weatherLink{
+	margin: 0 auto;
+	width: 100%;
+	height: 50px;
+	padding-top: 20px;
+	position: absolute;
+	left: 0px;
+	bottom: 50px;
+}
+
+#weatherLink:hover{
+	background-color: rgba(0, 46, 76 , .2);
+
+}
+/*#weatherLink{
+	position: absolute;
+	width: 100%;
+	height: calc(100% + 15px);
+	line-height: 4;
+	left: 0px;
+	top: 0px;
+}*/
+
+/*#weatherLink:hover{
+	background-color: rgba(0, 46, 76 , .2);
+}*/
+
+#weather h3{
+	font-size: 45px;
+}
+
+.tempwrapper{
+	position: relative;
+	left: 70px;
+}
+
+#currenttemp{
+	position: absolute;
+}
+
+.smalltempwrapper{
+	position: absolute;
+	left: 100px;
+	margin-top: 27.5px;
+	font-size: 1.3em;
+	clear: both;
+}
+
+#sidenav-overlay{
+	left: 300px;
+}
+
+
+#weatherSideNav{
+	position: absolute;
+	z-index: 1;
+	bottom: 150px;
+	left: 100px;
 }
