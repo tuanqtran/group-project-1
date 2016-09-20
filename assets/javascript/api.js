@@ -125,7 +125,7 @@ $(document).ready(function() {
 		unit: 'f',
 
 	success: function(weather) {
-		html = '<img class="" src='+weather.image+'>';
+		html = '<img id="weatherImage" src='+weather.image+'>';
 		html += "<p>Today's Weather</p>"
 		html += '<div class="tempwrapper"><h3 id="currenttemp">'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
 		html += '<div class="smalltempwrapper"><p id="hightemp">'+ "H: " +weather.high+'&deg;F</p><p id="lowtemp">'+ "L: " +weather.low+'&deg;F</p></div></div>';
@@ -133,8 +133,6 @@ $(document).ready(function() {
 		html += '<ul><li id="weatherFullWidth">'+weather.city+', '+weather.region+'</li>';
 		html += '<li id="weatherLeftHalf">'+weather.currently+'</li>';
 		html += '<li id="weatherRightHalf">Humidity: '+weather.humidity+'%</li></ul>';
-
-		html += '<p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p>'
 		html += '<div id="thisisthething">'
 		// html += '<img class="logoimg" src="assets/images/logo.png">';
 		
@@ -142,7 +140,8 @@ $(document).ready(function() {
 			html += '<img src=' + weather.forecast[i].thumbnail + '><p>' + weather.forecast[i].day + ':' + weather.forecast[i].high + "&deg;F</p>";
 		}
 
-		html += '</div><a id="weatherLink" href="' + weather.link + '">Full Forecast Here</a>';
+		html += '</div><div id="weatherLink"><a href="' + weather.link + '">Full Forecast Here</a></div>';
+		html += '<div><p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p></div>'
 
 		$(".weather").html(html);
 

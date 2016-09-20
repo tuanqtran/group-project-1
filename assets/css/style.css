@@ -22,6 +22,15 @@
 	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
 ================================================================================================
 */
+.myNavContainer{
+	/*background-color: white;*/
+	background-color: #fff3e0;
+	max-width: 300px;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+
 #fireBaseThumbUp, #firebaseFakeThumbDown{
 	position: absolute;
 	z-index: 1;
@@ -52,10 +61,18 @@
     transform: rotate(180deg);
 }
 
+#weatherImage{
+	position: relative;
+	left: 50px;
+}
+
 #thisisthething{
-	background: red;
+	/*background: red;*/
 	float: left;
 	width: 300px;
+	/*height: 400px;*/
+	height: 100%;
+	/*position: relative;*/
 	/*position: absolute;*/
 }
 
@@ -162,33 +179,38 @@
 	left: -5px;
 	height: 50%;
 	width: 20px;
-	/*height: 1000px;*/
-	/*bottom: 150px;*/
-	/*left: 100px;*/
-	-webkit-animation: weatherNavJump 2s;
-    animation: weatherNavJump 2s;
+	-webkit-transition: .5s;
+	transition: .5s;
+}
+
+#weatherSideNav:hover{
+	left: 0px;
+	-webkit-animation: weatherNavSlide .5s;
+    animation: weatherNavSlide .5s;
 }
 
 
-@-webkit-keyframes weatherNavJump {
-	from { left: 0px;
-}
-	to { width: 100% }	
+@-webkit-keyframes weatherNavSlide {
+	0% {left:-5px;}
+	100% {left: 0px;}
 }
 
-@keyframes weatherNavJump {
-	from { left: 0px;
- }
-	to { width: 100% }
+@keyframes weatherNavSlide {
+	0% {left:-5px;}
+	100% {left: 0px;}
 }
 
 .drag-target{
 	width: 0px;
 }
 .side-nav{
+	background-color: #fff3e0;
 	overflow-x: hidden;
 }
 
+.side-nav a.btn{
+	margin: 0px; 
+}
 
 
 
@@ -214,11 +236,9 @@
 	height: 100%;
 	position: fixed;
 	float: left;
-
 }
 
 .logoimg{
-	/*position: absolute;*/
 	position: relative;
 	width: 150px;
 	height: 75px;
@@ -1046,6 +1066,28 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 }
 
 @media screen and (max-width:768px){
+
+	.movedown{
+		position: relative;
+		bottom: 60px;
+	}
+
+/*.movedown{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	background-color: #f57c00;
+	border-right: 1px solid white;
+
+}*/
+	#weatherLink{
+		position: relative;
+		float: left;
+		padding-bottom: 5px;
+		background-color: green;
+		padding-top: 0px;
+	}
+
 
 /*
 ================================================================================================
