@@ -22,6 +22,179 @@
 	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
 ================================================================================================
 */
+#fireBaseThumbUp, #firebaseFakeThumbDown{
+	position: absolute;
+	z-index: 1;
+	-webkit-animation: wiggler 2s;
+    animation: wiggler 2s;
+}
+
+#fireBaseThumbUp{
+	top: 15px;
+	right: 100px;
+}
+
+#firebaseFakeThumbDown{
+	top: 12px;
+	right: 15px;
+	-webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+}
+
+#firebaseFakeThumbDown:hover{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#thisisthething{
+	background: red;
+	float: left;
+	width: 300px;
+	/*position: absolute;*/
+}
+
+
+.weather {
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+	text-align: center;
+	text-transform: uppercase;
+	/*background: #1192d3 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/austin-2.jpg) no-repeat bottom right;*/
+}
+
+.weather ul {
+  margin-top: 100px;
+  border-top: 1px solid black;
+}
+
+.weather li {
+  /*background: rgba(0, 46, 76 , .2);*/
+  padding: 20px 0;
+  /*border-bottom: 1px solid black;*/
+  float: left;
+  /*width: 100%;*/
+  /*display: inline-block;*/
+  /*border-radius: 5px;*/
+}
+
+#weatherFullWidth{
+	width: 100%;
+	height: 100%;
+}
+
+#weatherLeftHalf, #weatherRightHalf{
+	border-bottom: 1px solid black;
+}
+
+#weatherLeftHalf, #weatherRightHalf{
+	width: 50%;
+	border-top: 1px solid black;
+}
+
+#weatherLeftHalf{
+	border-right: 1px solid black;
+}
+
+#weatherLink{
+	margin: 0 auto;
+	width: 100%;
+	height: 50px;
+	padding-top: 20px;
+	position: absolute;
+	left: 0px;
+	bottom: 50px;
+}
+
+#weatherLink:hover{
+	background-color: rgba(0, 46, 76 , .2);
+
+}
+/*#weatherLink{
+	position: absolute;
+	width: 100%;
+	height: calc(100% + 15px);
+	line-height: 4;
+	left: 0px;
+	top: 0px;
+}*/
+
+/*#weatherLink:hover{
+	background-color: rgba(0, 46, 76 , .2);
+}*/
+
+.weather h3{
+	font-size: 45px;
+}
+
+.tempwrapper{
+	position: relative;
+	left: 70px;
+}
+
+#currenttemp{
+	position: absolute;
+}
+
+.smalltempwrapper{
+	position: absolute;
+	left: 100px;
+	margin-top: 27.5px;
+	font-size: 1.3em;
+	clear: both;
+}
+
+#sidenav-overlay{
+	left: 300px;
+}
+
+
+#weatherSideNav{
+	position: absolute;
+	z-index: 1;
+	top: 30%;
+	left: -5px;
+	height: 50%;
+	width: 20px;
+	/*height: 1000px;*/
+	/*bottom: 150px;*/
+	/*left: 100px;*/
+	-webkit-animation: weatherNavJump 2s;
+    animation: weatherNavJump 2s;
+}
+
+
+@-webkit-keyframes weatherNavJump {
+	from { left: 0px;
+}
+	to { width: 100% }	
+}
+
+@keyframes weatherNavJump {
+	from { left: 0px;
+ }
+	to { width: 100% }
+}
+
+.drag-target{
+	width: 0px;
+}
+.side-nav{
+	overflow-x: hidden;
+}
+
+
+
+
+
+
+
 .invisible{
 	display: none;
 }
@@ -943,136 +1116,3 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 ================================================================================================
 */
-#fireBaseThumbUp, #firebaseFakeThumbDown{
-	position: absolute;
-	z-index: 1;
-	-webkit-animation: wiggler 2s;
-    animation: wiggler 2s;
-}
-
-#fireBaseThumbUp{
-	top: 15px;
-	right: 100px;
-}
-
-#firebaseFakeThumbDown{
-	top: 12px;
-	right: 15px;
-	-webkit-transition: 2s;
-    -moz-transition: 2s;
-    -ms-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s;
-}
-
-#firebaseFakeThumbDown:hover{
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-
-#weather {
-	width: 100%;
-	height: 100%;
-	margin: 0px auto;
-	text-align: center;
-	text-transform: uppercase;
-	/*background: #1192d3 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/austin-2.jpg) no-repeat bottom right;*/
-}
-
-#weather ul {
-  margin-top: 100px;
-  border-top: 1px solid black;
-}
-
-#weather li {
-  /*background: rgba(0, 46, 76 , .2);*/
-  padding: 20px 0;
-  /*border-bottom: 1px solid black;*/
-  float: left;
-  /*width: 100%;*/
-  /*display: inline-block;*/
-  /*border-radius: 5px;*/
-}
-
-#weatherFullWidth{
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-#weatherLeftHalf, #weatherRightHalf{
-	border-bottom: 1px solid black;
-}
-
-#weatherLeftHalf, #weatherRightHalf{
-	width: 50%;
-	border-top: 1px solid black;
-}
-
-#weatherLeftHalf{
-	border-right: 1px solid black;
-}
-
-#weatherLink{
-	margin: 0 auto;
-	width: 100%;
-	height: 50px;
-	padding-top: 20px;
-	position: absolute;
-	left: 0px;
-	bottom: 50px;
-}
-
-#weatherLink:hover{
-	background-color: rgba(0, 46, 76 , .2);
-
-}
-/*#weatherLink{
-	position: absolute;
-	width: 100%;
-	height: calc(100% + 15px);
-	line-height: 4;
-	left: 0px;
-	top: 0px;
-}*/
-
-/*#weatherLink:hover{
-	background-color: rgba(0, 46, 76 , .2);
-}*/
-
-#weather h3{
-	font-size: 45px;
-}
-
-.tempwrapper{
-	position: relative;
-	left: 70px;
-}
-
-#currenttemp{
-	position: absolute;
-}
-
-.smalltempwrapper{
-	position: absolute;
-	left: 100px;
-	margin-top: 27.5px;
-	font-size: 1.3em;
-	clear: both;
-}
-
-#sidenav-overlay{
-	left: 300px;
-}
-
-
-#weatherSideNav{
-	position: absolute;
-	z-index: 1;
-	bottom: 150px;
-	left: 100px;
-}

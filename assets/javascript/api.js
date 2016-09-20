@@ -73,6 +73,7 @@ $('#searchBtn').on('click', function() {
     $.ajax({url: queryURL, method: 'GET', dataType: 'jsonp'}).done(function(response) {
 		// Stores the data returned from the Meetup API into the variable 'results'.
 		var results = response.data;
+		initMap();
 
 		for (var i=0; i<results.length; i++) {
 			// Pushes data gathered from the AJAX query into their associated arrays.
@@ -85,9 +86,9 @@ $('#searchBtn').on('click', function() {
 			// Concatenates objects from the 'eventInfo' array and sets it equal to the var 'contentString', which is then used within the 'infowindow' pop-up that appears whenever a map marker is clicked.
 			contentString = '<h1>' + eventInfo[i].eventName + '</h1>' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a>';
 			// Calling the function defined below.
-			geocodeLatLng(geocoder, map, infowindow, contentString);
+			geocodeLatLng(map, marker, infowindow, contentString);
 			// Function that takes inputs and, in turn, creates map markers and infowindows accordingly.
-			function geocodeLatLng(geocoder, map, infowindow, contentString) {
+			function geocodeLatLng(map, marker, infowindow, contentString) {
 				var input = coordinates[i];
 			    var latlngStr = input.split(',', 2);
 			    var latlng = {
@@ -98,10 +99,11 @@ $('#searchBtn').on('click', function() {
                 map.setZoom(10);
                 marker = new google.maps.Marker({
                     map: map,
-                    position: latlng
+                    position: latlng,
+                    animation: google.maps.Animation.DROP
                 });
                 infowindow = new google.maps.InfoWindow({
-					content: contentString
+					content: contentString,
 				});
                 marker.addListener('click', function() {
                 	infowindow.open(map, marker);
@@ -124,28 +126,30 @@ $(document).ready(function() {
 
 	success: function(weather) {
 		html = '<img class="" src='+weather.image+'>';
-		html += '<p>Today Weather</p>'
+		html += "<p>Today's Weather</p>"
 		html += '<div class="tempwrapper"><h3 id="currenttemp">'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
 		html += '<div class="smalltempwrapper"><p id="hightemp">'+ "H: " +weather.high+'&deg;F</p><p id="lowtemp">'+ "L: " +weather.low+'&deg;F</p></div></div>';
 
 		html += '<ul><li id="weatherFullWidth">'+weather.city+', '+weather.region+'</li>';
 		html += '<li id="weatherLeftHalf">'+weather.currently+'</li>';
-		html += '<li id="weatherRightHalf">Humidity: '+weather.humidity+'%</li>';
-		html += '</ul> <p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p>'
+		html += '<li id="weatherRightHalf">Humidity: '+weather.humidity+'%</li></ul>';
+
+		html += '<p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p>'
+		html += '<div id="thisisthething">'
 		// html += '<img class="logoimg" src="assets/images/logo.png">';
 		
 		for(var i=0;i<5;i++) {
-			html += '<img class="weatherimg" src=' + weather.forecast[i].thumbnail + '><p class="weatherimg">' + weather.forecast[i].day + ':' + weather.forecast[i].high + '</p>';
+			html += '<img src=' + weather.forecast[i].thumbnail + '><p>' + weather.forecast[i].day + ':' + weather.forecast[i].high + "&deg;F</p>";
 		}
 
-		html += '<a id="weatherLink" href="' + weather.link + '">Full Forecast Here</a>';
+		html += '</div><a id="weatherLink" href="' + weather.link + '">Full Forecast Here</a>';
 
-		$("#weather").html(html);
+		$(".weather").html(html);
 
 	},
 
 		error: function(error) {
-			$("#weather").html('<p>'+error+'</p>');
+			$(".weather").html('<p>'+error+'</p>');
 		}
 	});
 });
