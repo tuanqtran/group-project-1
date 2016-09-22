@@ -74,21 +74,36 @@ $('#searchBtn').on('click', function() {
 		// Stores the data returned from the Meetup API into the variable 'results'.
 		var results = response.data;
 		initMap();
-
+		// console.log(results);
 		for (var i=0; i<results.length; i++) {
 			// Pushes data gathered from the AJAX query into their associated arrays.
 			coordinates.push(results[i].lat + ', ' + results[i].lon);
 			eventInfo.push({
 				eventName: results[i].name,
 				eventDescription: results[i].description,
-				eventLink: results[i].link
+				eventLink: results[i].link,
+				eventOrganizerName: results[i].organizer.name,
+				eventCity: results[i].city,
+				eventFounded: results[i].created,
+				// eventPhoto: results[i].photos[0].photo_link, //Not everyone has a photo.
+				nextEventName: results[i].next_event.name,
+				nextEvent: results[i].next_event.time,
+				nextEventRSVP: results[i].next_event.yes_rsvp_count
+
 			});
 			// Concatenates objects from the 'eventInfo' array and sets it equal to the var 'contentString', which is then used within the 'infowindow' pop-up that appears whenever a map marker is clicked.
-			contentString = '<h1>' + eventInfo[i].eventName + '</h1>' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a>';
+			contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a></div></div></div>';
+
+			eventAdder = '<div class="col s6 m4 l2 center modal-card-margin"><div class="card image-hover"><div class="card-image waves-effect waves-block waves-black">' +
+				'<img class="activator eventImg" src=' + 'eventInfo[i].eventPhoto' + '></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' +
+				eventInfo[i].eventName + '<i class="material-icons right">more_vert</i></span><p><a href="' + eventInfo[i].eventLink + '">Meetup Weblink</a></p></div>' +
+				'<div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventInfo[i].eventName + '<i class="material-icons right">close</i></span>' +
+				'<br> <p><strong>Founded: </strong>' + moment(eventInfo[i].eventFounded).format("MM DD YYYY") + '</p> <br> <p><strong>Name of the next event: </strong>' + eventInfo[i].nextEventName + '</p> <br> <p><strong>Timing of the next event: </strong>' + moment(eventInfo[i].nextEvent).format("MM DD YYYY hh:mm A")+ '</p>' +
+				'<br> <p><strong>RSVP: </strong>' + eventInfo[i].nextEventRSVP + '</p></div></div></div>'
 			// Calling the function defined below.
 			geocodeLatLng(map, marker, infowindow, contentString);
 			// Function that takes inputs and, in turn, creates map markers and infowindows accordingly.
-			function geocodeLatLng(map, marker, infowindow, contentString) {
+			function geocodeLatLng(map, marker, infowindow, contentString, eventAdder) {
 				var input = coordinates[i];
 			    var latlngStr = input.split(',', 2);
 			    var latlng = {
@@ -96,7 +111,7 @@ $('#searchBtn').on('click', function() {
 			        lng: parseFloat(latlngStr[1]) + Math.random()*0.01
 			    };
 	        	map.setCenter(latlng);
-                map.setZoom(10);
+                map.setZoom(13);
                 marker = new google.maps.Marker({
                     map: map,
                     position: latlng,
@@ -104,12 +119,35 @@ $('#searchBtn').on('click', function() {
                 });
                 infowindow = new google.maps.InfoWindow({
 					content: contentString,
+					// setEditable: true
+
 				});
+
                 marker.addListener('click', function() {
                 	infowindow.open(map, marker);
+                	$(".gm-style-iw").siblings().children(':nth-child(2)').css({'display': 'none'});
+                	$(".gm-style-iw").siblings().children(':nth-child(4)').css({'display': 'none'});
+                	$(".gm-style-iw").siblings().children('img').parent().addClass("infoWindowClose");
+                   	$(".gm-style-iw").parent().addClass("infoWindowSize");
+             
                 });
+
+                // console.log(eventInfo[i].eventName);
+                // console.log(results[i].organizer.name); /Works
+                // console.log(eventInfo[i].eventOrganizerName);
+                // console.log(eventInfo[i].eventPhoto);
+                // console.log(results[i].photos[0].photo_link);
 			};
+
+
+			$("#modal2 .row").append(eventAdder);
+
+
 		};
+		// console.log($(".gm-style-iw"));
+		// console.log($(".gm-style-iw").children());
+		// console.log($(".gm-style-iw").children().siblings());
+	
 	}); // End of the AJAX query event.
 
 	// setTimeout(loading_screen.finish.bind(loading_screen), 5000);
@@ -129,11 +167,10 @@ $(document).ready(function() {
 		html += "<p>Today's Weather</p>"
 		html += '<div class="tempwrapper"><h3 id="currenttemp">'+weather.temp+'&deg;'+weather.units.temp+'</h3>';
 		html += '<div class="smalltempwrapper"><p id="hightemp">'+ "H: " +weather.high+'&deg;F</p><p id="lowtemp">'+ "L: " +weather.low+'&deg;F</p></div></div>';
-
 		html += '<ul><li id="weatherFullWidth">'+weather.city+', '+weather.region+'</li>';
 		html += '<li id="weatherLeftHalf">'+weather.currently+'</li>';
 		html += '<li id="weatherRightHalf">Humidity: '+weather.humidity+'%</li></ul>';
-		html += '<div id="thisisthething">'
+		html += '<div id="weatherForecast">'
 		// html += '<img class="logoimg" src="assets/images/logo.png">';
 		
 		for(var i=0;i<5;i++) {
@@ -152,3 +189,5 @@ $(document).ready(function() {
 		}
 	});
 });
+
+

@@ -117,7 +117,7 @@ $(document).ready(function(){
 		.tiPause("5000")
 		.tiDelete(17)
 		.tiPause("1000")
-		.tiType("We recommend checking out Cohorts helping Cohorts within Austin, Texas.")
+		.tiType("We recommend checking out Cohorts Helping Cohorts within Austin, Texas.")
 		.tiPause("5000")
 		.tiDelete(71)
 		.tiType("But you know their")
@@ -129,7 +129,7 @@ $(document).ready(function(){
 		.tiPause("5000")
 		.tiDelete(47)
 		.tiPause("1000")
-		.tiType("Maybe try out that game tag below.")
+		.tiType('Maybe try out that "Games" tag below.')
 		.tiPause("5000")
 	});
 

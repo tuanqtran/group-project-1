@@ -7,15 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="assets/libraries/spinkit/css/spinners/5-pulse.css">
-	
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.0.1/trianglify.min.js">
-
 	<!-- Reference to materilzie css sheet. -->
 	<link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
-	<!-- Reference to pleasewait css library. -->
-	<link rel="stylesheet" type="text/css" href="assets/libraries/please-wait/build/please-wait.css">
 	<!-- Reference to main css sheet. -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- Ensures the page is mobile responsive. -->
@@ -51,8 +44,8 @@
 			<!-- <p id="thumbUpValue"></p> -->
 		</div>
 
-		<div id="fakeThumbDown">
-			<img id="firebaseFakeThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Do you like what you see?" src="assets/images/thumb-down.png" alt="">
+		<div id="thumbDown">
+			<img id="firebaseThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Or...?" src="assets/images/thumb-down.png" alt="">
 
 			<!-- <img id="firebaseFakeThumbDown" src="assets/images/thumb-down.png" alt=""> -->
 			<!-- <p id="fakeThumbDownValue"></p> -->
@@ -65,7 +58,7 @@
 
 		<!-- Weather Info -->
 		<div class="invisible">
-			<div id="slide-out" class="side-nav" style="background-color: #fff3e0">
+			<div id="slide-out" class="side-nav">
 			
 				<div class="myNavContainer">
 					<a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' href='#modal3'><img class="logoimg" src="assets/images/logo.png"></a>   
@@ -117,20 +110,20 @@
 					<!-- Search Input. -->
 					<div class="input-field col s6">
 			    		<input id="textInput" type="text" required>
-			    		<label for="textInput">Search text</label>
+			    		<label for="textInput">Subject</label>
 					</div>
 					
 					<!-- Location Input. -->
 					<div class="input-field col s6">
 			    		<input id="locationInput" type="text">
-			    		<label for="locationInput">Location text</label>
+			    		<label for="locationInput">Location</label>
 					</div>
 		
 					<!-- Range Input. -->
 					<div class="col s12">
-						<p class="center orange-text text-darken-2">How many input?</p>
+						<p class="center orange-text text-darken-2">Number of results?</p>
 						<p class="range-field">
-							<input id="resultsNumInput" type="range" min="1" max="30" />
+							<input id="resultsNumInput" type="range" min="1" max="30"/>
 						</p>
 					</div>
 
@@ -145,28 +138,28 @@
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
+								<p>&nbsp;</p>
 								<span class="title">Arts</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
-								<span class="title">Career & Business</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								<p>&nbsp;</p>
+								<span class="title">Business</span>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
+								<p>&nbsp;</p>
 								<span class="title">Cars</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 						</ul>
 					</div> <!-- End of preset selections 1. -->
@@ -178,28 +171,28 @@
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
+								<p>&nbsp;</p>
 								<span class="title">Fitness</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
-								<span class="title">Food & Drink</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								<p>&nbsp;</p>
+								<span class="title">Foodies</span>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
+								<p>&nbsp;</p>
 								<span class="title">Games</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 						</ul>
 					</div> <!-- End of preset selections 2. -->
@@ -211,28 +204,28 @@
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
-								<span class="title">Movies & Film</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								<p>&nbsp;</p>
+								<span class="title">Movies</span>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
+								<p>&nbsp;</p>
 								<span class="title" val="music">Music</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 							<li class="collection-item avatar modal-highlight">
 								<a href="#">
 									<img src="http://placehold.it/50x50" alt="" class="image-circle-modal">
 								</a>
-								<span class="title">Outdoors & Adventure</span>
-								<p>First Line</p>
-								<p>Second Line</p>
-								<a href="#" class="secondary-content"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
+								<p>&nbsp;</p>
+								<span class="title">Outdoors</span>
+								
+								<a href="#" class="secondary-content searchIcon"><i class="material-icons orange-text text-accent-4 hide-768px">room</i></a>
 							</li>
 						</ul>
 					</div> <!-- End of preset selections 3. -->	
@@ -250,15 +243,15 @@
 	<!-- Modal 2 Info. -->
 	<div id="modal2" class="modal">
 		<div class="modal-content">
-			<h4 class="center">Modal Header</h4>
-			
+			<h4 class="center">Events</h4>
+				
 			<div class="row">
 				<!-- Start of meetup info card boxes. -->
 				<div class="col s6 m4 l2 center modal-card-margin">
 					<div class="card image-hover">
 						<!-- Current Meetup Image Container. -->
 						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
+							<img class="activator eventImg" src="http://placehold.it/400x250">
 						</div>
 						
 						<!-- Card title and weblink. -->
@@ -537,25 +530,27 @@
 		</div>
 	</div> <!-- End of Modal 4 Info. -->
 
-	<!-- Reference to jquery version 2.2.3. -->
+	<!-- Reference to jQuery version 2.2.3. -->
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"
 	></script>
-	<!-- Reference to materialize javascript style sheet. -->
+	<!-- Reference to Materialize javascript style sheet. -->
 	<script src="assets/javascript/materialize.js"></script>
-	<!-- Reference to javascript style sheet. -->
+	<!-- Reference to Javascript style sheet. -->
 	<script src="assets/javascript/style.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuj3o9FkNZuGQRckiKjVtHlybRDBRzofw&callback=initMap" async defer></script>
-
-	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-	<script src="assets/javascript/firebase.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-
-
-
+	<!-- Reference to Typeit library. -->
 	<script src="assets/libraries/typeit-master/dev/typeit.js"></script>
+	<!-- Reference to Google Maps api. -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuj3o9FkNZuGQRckiKjVtHlybRDBRzofw&callback=initMap" async defer></script>
+	<!-- Reference to Simple Weather api. -->	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+	<!-- Reference to Moment.js library. -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+	<!-- Reference to our Javascript api file. -->	
 	<script src="assets/javascript/api.js"></script>
-
+	<!-- Reference to Firebase.js. -->
+	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<!-- Reference to our Firebase.js file. -->
+	<script src="assets/javascript/firebase.js"></script>
 
 </body>
 </html>

@@ -22,8 +22,95 @@
 	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
 ================================================================================================
 */
+.infoWindowClose{
+	top: -5px !important;
+	right: -5px !important;
+}
+
+.infoWindowSize{
+	width: 525px !important;
+}
+
+
+.main-text-padding{
+	width: 525px;
+}
+
+.text-padding{
+	margin-left: 20px;
+	width: 480px;
+}
+
+.text-padding img{
+	width: 480px;
+}
+
+.iw-container .iw-title {
+	width: 525px;
+	font-size: 22px;
+	font-weight: 400;
+	padding: 10px;
+	background-color: #f57c00;
+	color: white;
+	margin: 1px;
+	border-radius: 2px 2px 0 0;  /*In accordance with the rounding of the default infowindow corners.*/ 
+}
+
+
+.gm-style-iw {
+   width: 525px !important;
+   top: 0 !important;
+   left: 0 !important;
+   background-color: #fff;
+   box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+   border: 1px solid rgba(72, 181, 233, 0.6);
+   border-radius: 2px 2px 0 0;
+}
+
+
+/*.infoWindow < div{*/
+	/*background-color: orange;*/
+	/*background-color: red;*/
+	/*font-size: 2em;*/
+/*}*/
+
+/*.gm-style-iw{
+	background-color: red;
+}*/
+
+.eventImg{
+	width: 228.19px;
+	height: 207.44px;
+}
+
+/*#iw-container  .iw-title {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 22px;
+   font-weight: 400;
+   padding: 10px;
+   background-color: #48b5e9;
+   color: white;
+   margin: 1px;
+   border-radius: 2px 2px 0 0;  In accordance with the rounding of the default infowindow corners. 
+}*/
+
+/*.gm-style-iw {
+   width: 350px !important;
+   top: 0 !important;
+   left: 0 !important;
+   border-radius: 2px 2px 0 0;
+}
+*/
+
+.searchIcon{
+	margin-top: 12.5px;
+}
+
+.collection{
+	cursor: pointer;
+}
+
 .myNavContainer{
-	/*background-color: white;*/
 	background-color: #fff3e0;
 	max-width: 300px;
 	height: 100%;
@@ -31,7 +118,7 @@
 	float: left;
 }
 
-#fireBaseThumbUp, #firebaseFakeThumbDown{
+#fireBaseThumbUp, #firebaseThumbDown{
 	position: absolute;
 	z-index: 1;
 	-webkit-animation: wiggler 2s;
@@ -43,7 +130,7 @@
 	right: 100px;
 }
 
-#firebaseFakeThumbDown{
+#firebaseThumbDown{
 	top: 12px;
 	right: 15px;
 	-webkit-transition: 2s;
@@ -53,7 +140,7 @@
     transition: 2s;
 }
 
-#firebaseFakeThumbDown:hover{
+#firebaseThumbDown:hover{
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -66,14 +153,10 @@
 	left: 50px;
 }
 
-#thisisthething{
-	/*background: red;*/
+#weatherForecast{
 	float: left;
 	width: 300px;
-	/*height: 400px;*/
 	height: 100%;
-	/*position: relative;*/
-	/*position: absolute;*/
 }
 
 
@@ -1066,20 +1149,64 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 }
 
 @media screen and (max-width:768px){
+	.iw-container .iw-title {
+		width: 220px;
 
+	}
+
+	.gm-style-iw {
+	   width: 220px !important;
+
+	}
+
+	.infoWindowClose{
+		top: -5px !important;
+		right: -5px !important;
+	}
+
+	.infoWindowSize{
+		width: 220px !important;
+	}
+
+
+	.main-text-padding{
+		width: 200px;
+	}
+
+	.text-padding{
+		margin-left: 10px;
+		width: 200px;
+	}
+
+	.text-padding img{
+		width: 200px;
+	}
+
+	.iw-container .iw-title {
+	   font-size: 16px;
+	}
+
+
+	.gm-style-iw {
+	   width: 225px !important;
+	}
+
+	#fireBaseThumbUp, #firebaseThumbDown{
+		width: 25px;
+	}
+
+	#fireBaseThumbUp{
+		top: 10px;
+		right: 50px;
+	}
+
+	.tooltipped{
+	}
 	.movedown{
 		position: relative;
 		bottom: 60px;
 	}
 
-/*.movedown{
-	position: absolute;
-	bottom: 0px;
-	height: 50px;
-	background-color: #f57c00;
-	border-right: 1px solid white;
-
-}*/
 	#weatherLink{
 		position: relative;
 		float: left;
