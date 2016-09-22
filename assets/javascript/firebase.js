@@ -18,25 +18,20 @@
   var clickCounter3 = initialValue3;
   var meh = 0;
   var initialValue4 = 0;
-  var id = initialValue4;
-  var userTextInput = "";
-  var userLocationInput = "";
-  var userResultInput = "";
-
+  var clickCounter4 = initialValue4;
 
   // At the initial load, get a snapshot of the current data.
   database.ref().on("value", function(snapshot) {
-      // console.log(snapshot.val());
+      console.log(snapshot.val());
       // Change the clickcounter to match the data in the database
       clickCounter = snapshot.val().ourCounters.likeCounter;
       clickCounter2 = snapshot.val().ourCounters.dislikeCounter;
       clickCounter3 = snapshot.val().ourCounters.mehCounter;
-      id = snapshot.val().searchCount;
 
+      console.log(id);
 
-      // $(".thumbUp").attr("data-tooltip", clickCounter);
-      // $(".fakeThumbDown").attr("data-tooltip", clickCounter2);
-
+      $(".thumbUp").attr("data-tooltip", clickCounter);
+      $(".fakeThumbDown").attr("data-tooltip", clickCounter2);
 
       // If any errors are experienced, log them to console. 
   }, function(errorObject) {
@@ -44,12 +39,13 @@
       console.log("The read failed: " + errorObject.code);
 
   });
+
+  // --------- Thumbs Up, Thumbs Down & Meh counter ---------------
   // --------------------------------------------------------------
 
-  // Whenever a user clicks the click button
+  // Whenever a user clicks the button
   $("#thumbUp").one("click", function() {
-      // console.log("This is thumbs up before: " + clickCounter);
-      // Reduce the clickCounter by 1
+
       clickCounter++;
       meh++;
       mehF();
@@ -67,20 +63,14 @@
 
   });
 
-  // database.ref().on("child_added"), function(childSnapshot){
-  //   console.log();
-  // }
-
   // Whenever a user clicks the click button
-  $("#fakeThumbDown").one("click", function() {
-      // console.log("This is fake thumbs up before: " + clickCounter2);
-      // Reduce the clickCounter by 1
+  $("#thumbDown").one("click", function() {
+
       clickCounter2++;
       meh++;
       mehF();
 
       // Save new value to Firebase
-
       database.ref().update({
           ourCounters: {
               likeCounter: clickCounter,
@@ -91,35 +81,68 @@
 
       console.log("This is fake thumbs up after: " + clickCounter2);
 
-
   });
 
   function mehF() {
       if (meh == 2) {
           clickCounter3++;
-          alert("meh");
+          console.log("meh");
       }
   }
 
   // -------------------------- Search History --------------------------------------------------------
   // --------------------------------------------------------------------------------------------------
   $("#searchBtn").on("click", function() {
-  
-    id++;
+      database.ref().on("value", function(snapshot) {
+          clickCounter4 = snapshot.val().searches.searchNumber;
+      })
+      clickCounter4++;
 
+      database.ref().update({
+          searches: {
+              searchNumber: clickCounter4
+          }
+      });
       userTextInput = $("#textInput").val();
       userLocationInput = $("#locationInput").val();
       userResultInput = $("#resultsNumInput").val();
-
       console.log(userTextInput);
-      database.ref('searchCount').set(id)
-      database.ref('userSearchHistory').push({
-          userSearchHistory: {
-              userTextInput,
-              userLocationInput,
-              userResultInput
-          }
 
+      var time = new Date();
+
+      var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
+
+      database.ref("User Search History").child(searchTitle).update({
+          userTextInput,
+          userLocationInput,
+          userResultInput
+      })
+  });
+
+  $(".collection-item").on("click", function() {
+      database.ref().on("value", function(snapshot) {
+          clickCounter4 = snapshot.val().searches.searchNumber;
+      })
+      clickCounter4++;
+
+      database.ref().update({
+          searches: {
+              searchNumber: clickCounter4
+          }
       });
 
+      userTextInput = $(this).children('.title').text();
+      userLocationInput = "Austin, TX";
+      userResultInput = 30;
+      console.log(userTextInput);
+
+      var time = new Date();
+
+      var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
+
+      database.ref("User Search History").child(searchTitle).update({
+          userTextInput,
+          userLocationInput,
+          userResultInput
+      })
   });
