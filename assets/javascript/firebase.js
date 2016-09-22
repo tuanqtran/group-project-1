@@ -112,7 +112,7 @@
 
       var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
 
-      database.ref().child("User Search History").child(searchTitle).update({
+      database.ref("User Search History").child(searchTitle).update({
           userTextInput,
           userLocationInput,
           userResultInput
@@ -140,7 +140,7 @@
 
       var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
 
-      database.ref().child("User Search History").child(searchTitle).update({
+      database.ref("User Search History").child(searchTitle).update({
           userTextInput,
           userLocationInput,
           userResultInput
