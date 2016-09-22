@@ -1,72 +1,148 @@
   var config = {
-    apiKey: "AIzaSyA8P31fE7TFE-r_-XirZAenFCRMZUW_AKM",
-    authDomain: "first-project-47625.firebaseapp.com",
-    databaseURL: "https://first-project-47625.firebaseio.com",
-    storageBucket: "first-project-47625.appspot.com",
-    messagingSenderId: "963951273741"
+      apiKey: "AIzaSyAolUMI028Apuhg3bFvYgHJ-iPOISTZeJ0",
+      authDomain: "group-project-1-89c7e.firebaseapp.com",
+      databaseURL: "https://group-project-1-89c7e.firebaseio.com",
+      storageBucket: "group-project-1-89c7e.appspot.com",
+      messagingSenderId: "347336096905"
   };
   firebase.initializeApp(config);
+
   var database = firebase.database();
-// Set Initial Counter 
-var initialValue = 0;
-var clickCounter = initialValue; 
-var initialValue2 = 0;
-var clickCounter2 = initialValue2;
-var initialValue3 = 0;
-var clickCounter3 = initialValue3;
-var meh = 0;
-// At the initial load, get a snapshot of the current data.
-database.ref().on("value", function(snapshot) {
-  // Change the clickcounter to match the data in the database
-  clickCounter = snapshot.val().ourCounters.likeCounter;
-  clickCounter2 = snapshot.val().ourCounters.dislikeCounter;
-  clickCounter3 = snapshot.val().ourCounters.mehCounter;
-  // $(".thumbUp").attr("data-tooltip", clickCounter);
-  // $(".fakeThumbDown").attr("data-tooltip", clickCounter2);
-// If any errors are experienced, log them to console. 
-}, function (errorObject) {
-    console.log("The read failed: " + errorObject.code);
-});
-// --------------------------------------------------------------
-// Whenever a user clicks the click button
-$("#fireBaseThumbUp").one("click", function() {
-  // console.log("This is thumbs up before: " + clickCounter);
-  // Reduce the clickCounter by 1
-  clickCounter++;
-  meh++;
-  mehF();
-  // Save new value to Firebase
-  database.ref().update({
-    ourCounters: {
-      likeCounter: clickCounter,
-      dislikeCounter: clickCounter2,
-      mehCounter: clickCounter3
-    }
+
+  // Set Initial Counter 
+  var initialValue = 0;
+  var clickCounter = initialValue;
+  var initialValue2 = 0;
+  var clickCounter2 = initialValue2;
+  var initialValue3 = 0;
+  var clickCounter3 = initialValue3;
+  var meh = 0;
+  var initialValue4 = 0;
+  var clickCounter4 = initialValue4;
+
+  // At the initial load, get a snapshot of the current data.
+  database.ref().on("value", function(snapshot) {
+      console.log(snapshot.val());
+      // Change the clickcounter to match the data in the database
+      clickCounter = snapshot.val().ourCounters.likeCounter;
+      clickCounter2 = snapshot.val().ourCounters.dislikeCounter;
+      clickCounter3 = snapshot.val().ourCounters.mehCounter;
+
+      console.log(id);
+
+      $(".thumbUp").attr("data-tooltip", clickCounter);
+      $(".fakeThumbDown").attr("data-tooltip", clickCounter2);
+
+      // If any errors are experienced, log them to console. 
+  }, function(errorObject) {
+
+      console.log("The read failed: " + errorObject.code);
+
   });
-  console.log("This is thumbs up after: " + clickCounter);
-});
-// database.ref().on("child_added"), function(childSnapshot){
-//   console.log();
-// }
-// Whenever a user clicks the click button
-$("#firebaseFakeThumbDown").one("click", function() {
-  // console.log("This is fake thumbs up before: " + clickCounter2);
-  // Reduce the clickCounter by 1
-  clickCounter2++;
-  meh++;
-  mehF();
-  // Save new value to Firebase
-  database.ref().update({
-    ourCounters: {
-      likeCounter: clickCounter,
-      dislikeCounter: clickCounter2,
-      mehCounter: clickCounter3
-    }
+
+  // --------- Thumbs Up, Thumbs Down & Meh counter ---------------
+  // --------------------------------------------------------------
+
+  // Whenever a user clicks the button
+  $("#thumbUp").one("click", function() {
+
+      clickCounter++;
+      meh++;
+      mehF();
+
+      // Save new value to Firebase
+      database.ref().update({
+          ourCounters: {
+              likeCounter: clickCounter,
+              dislikeCounter: clickCounter2,
+              mehCounter: clickCounter3
+          }
+      });
+
+      console.log("This is thumbs up after: " + clickCounter);
+
   });
-  console.log("This is fake thumbs up after: " + clickCounter2);
-});
-function mehF() {
-  if (meh == 2) {
-    clickCounter3 ++;
+
+  // Whenever a user clicks the click button
+  $("#thumbDown").one("click", function() {
+
+      clickCounter2++;
+      meh++;
+      mehF();
+
+      // Save new value to Firebase
+      database.ref().update({
+          ourCounters: {
+              likeCounter: clickCounter,
+              dislikeCounter: clickCounter2,
+              mehCounter: clickCounter3
+          }
+      });
+
+      console.log("This is fake thumbs up after: " + clickCounter2);
+
+  });
+
+  function mehF() {
+      if (meh == 2) {
+          clickCounter3++;
+          console.log("meh");
+      }
   }
-}
+
+  // -------------------------- Search History --------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------
+  $("#searchBtn").on("click", function() {
+      database.ref().on("value", function(snapshot) {
+          clickCounter4 = snapshot.val().searches.searchNumber;
+      })
+      clickCounter4++;
+
+      database.ref().update({
+          searches: {
+              searchNumber: clickCounter4
+          }
+      });
+      userTextInput = $("#textInput").val();
+      userLocationInput = $("#locationInput").val();
+      userResultInput = $("#resultsNumInput").val();
+      console.log(userTextInput);
+
+      var time = new Date();
+
+      var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
+
+      database.ref().child("User Search History").child(searchTitle).update({
+          userTextInput,
+          userLocationInput,
+          userResultInput
+      })
+  });
+
+  $(".collection-item").on("click", function() {
+      database.ref().on("value", function(snapshot) {
+          clickCounter4 = snapshot.val().searches.searchNumber;
+      })
+      clickCounter4++;
+
+      database.ref().update({
+          searches: {
+              searchNumber: clickCounter4
+          }
+      });
+
+      userTextInput = $(this).children('.title').text();
+      userLocationInput = "Austin, TX";
+      userResultInput = 30;
+      console.log(userTextInput);
+
+      var time = new Date();
+
+      var searchTitle = ("Search Number: " + clickCounter4 + " - Date: " + time.toDateString() + " at " + time.toLocaleTimeString());
+
+      database.ref().child("User Search History").child(searchTitle).update({
+          userTextInput,
+          userLocationInput,
+          userResultInput
+      })
+  });
