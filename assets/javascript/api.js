@@ -58,6 +58,8 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 	// Clears data (from previous queries) from the arrays.
 	coordinates = [];
 	eventInfo = [];
+	$('#modal2 .row').empty();
+	// $('#textInput').empty();
 	var text;
 	var location;
 	var amountOfResults;
@@ -77,6 +79,7 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 	if (text == "" || location == "") {
 		console.log("Required search fields are not met.");
 	} else {
+		$('#textInput, #locationInput').val(null);
 		wLocation = location;
 		getWeather();
 
@@ -95,13 +98,34 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 			for (var i=0; i<results.length; i++) {
 				// Pushes data gathered from the AJAX query into their associated arrays.
 				coordinates.push(results[i].lat + ', ' + results[i].lon);
+				
+				if (results[i].photos === undefined) {
+					eventInfo.eventPhoto = 'assets/images/noImageFound.jpg';
+				} else {
+					eventInfo.eventPhoto = results[i].photos[0].photo_link;
+				}
+
 				eventInfo.push({
 					eventName: results[i].name,
 					eventDescription: results[i].description,
-					eventLink: results[i].link
+					eventLink: results[i].link,
+					eventFounded: results[i].created,
+					nextEventName: results[i].next_event.name,
+					nextEvent: results[i].next_event.time,
+					nextEventRSVP: results[i].next_event.yes_rsvp_count
 				});
+
+
+				// http://www.bannermanburke.co.uk/images/noImageFound.jpg
 				// Concatenates objects from the 'eventInfo' array and sets it equal to the var 'contentString', which is then used within the 'infowindow' pop-up that appears whenever a map marker is clicked.
-				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a></div></div></div>';
+				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><br><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a></div></div></div>';
+				
+				eventAdder = '<div class="col s6 m4 l2 center modal-card-margin"><div class="card image-hover"><div class="card-image waves-effect waves-block waves-black">' +
+					'<img class="activator eventImg" src=' + eventInfo.eventPhoto + '></div><br><div class="card-content"><span class="card-title activator grey-text text-darken-4 eventTitle">' +
+					eventInfo[i].eventName + '</span><br><br><p><a href="' + eventInfo[i].eventLink + '">Meetup Link</a></p></div>' +
+					'<div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventInfo[i].eventName + '<i class="material-icons right eventClose">close</i></span>' +
+					'<br> <p>Founded:<br>' + moment(eventInfo[i].eventFounded).format("MM/DD/YYYY") + '</p> <br> <p>Next Event:<br>' + eventInfo[i].nextEventName +'</p> <br> <p>Next Event Date:<br>' + moment(eventInfo[i].nextEvent).format("MM/DD/YYYY hh:mm A")+ '</p>' +
+					'<br> <p><strong>RSVP: </strong>' + eventInfo[i].nextEventRSVP + '</p></div></div></div>'
 				// Calling the function defined below.
 				geocodeLatLng(map, marker, infowindow, contentString);
 				// Function that takes inputs and, in turn, creates map markers and infowindows accordingly.
@@ -138,6 +162,9 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 	                	marker.setAnimation(null);
 	                });
 				};
+
+				$("#modal2 .row").append(eventAdder);
+
 			};
 		}); // End of the AJAX query event.
 	};

@@ -19,18 +19,35 @@ $(document).ready(function(){
 
 
     // Upon hovering over a modal2 images, expand the main modal and strink/blur the rest. When the mouse leaves reset to normal.
-	$(".image-hover").mouseover(function(){
+	// $(".image-hover").mouseover(function(){
+	// 	$(".image-hover").addClass("image-temp");
+	// 	$(this).addClass("image-active")
+	// 		.removeClass("image-hover");
+
+	// 	$(".image-hover").addClass("image-hover-nonactive")
+	// 		.removeClass("image-hover");
+	// }).mouseleave(function(){
+	// 	$(".image-temp").removeClass("image-active")
+	// 		.removeClass("image-hover-nonactive")
+	// 		.addClass("image-hover");
+	// });
+
+    // Upon hovering over modal2 rows, expand the main modal cards and strink/blur the rest. When the mouse leaves reset to normal. (This applies to dynamic changes.)
+	$(".row").on("mouseover", ".image-hover", function(){
+
 		$(".image-hover").addClass("image-temp");
 		$(this).addClass("image-active")
 			.removeClass("image-hover");
 
 		$(".image-hover").addClass("image-hover-nonactive")
 			.removeClass("image-hover");
-	}).mouseleave(function(){
+
+	}).on("mouseleave", ".image-temp", function(){
 		$(".image-temp").removeClass("image-active")
 			.removeClass("image-hover-nonactive")
 			.addClass("image-hover");
 	});
+
 
 
 	// $(".modal-highlight").mouseover(function(){
@@ -86,21 +103,11 @@ $(document).ready(function(){
 	$(".empty-typewriter-text").one("click",function(){
 
 		$("#modal3 p").empty()
-			.append("<p>What is Lorem Ipsum? <br><br> Lorem Ipsum is simply dummy text of the printing and typesetting " +
-				"industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an " +
-				"unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived " +
-				"not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. " +
-				"It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and " +
-				"more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. <br>" +
-				"<br><br>" +
-				"Why do we use it?" +
-				"<br><br>" +
-				"Lorem Ipsum is simply dummy text of the printing and typesetting " +
-				"industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an " +
-				"unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived " +
-				"not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. " +
-				"It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and " +
-				"more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>");
+			.append('<br><p>What is Meetup Maps (MuM)? <br><br> Meetup Maps was created in September of 2016 by Tuan Tran, Marcus Lam, and Brandon Short as their first group project for the Coding Bootcamp @ UT Austin. Recognizing the significance of meetups and its particular importance for bootcamp students, and acknowledging the versatility of Google Maps and its necessity for finding and attending potential meetups, the three members decided to utilize these two technologies in a way that would simplify the meetup "hunt" and make finding that next meetup less of a "previous page-next page" process. Thus, with the addition of various technologies, MuM was born.<br>' +
+				'<br><br>' +
+				'What technologies are being used?' +
+				'<br><br>' +
+				"The Meetup.com API and Google Maps API are the two main tools being used in the back-end. The former fetches parameter-matching events from the Meetup database, and the latter uses the returned data to plot markers and info windows on our Google Map accordingly. For data persistence, Firebase is being used to store a like-and-dislike counter (via the thumbs icons) and the user's search history (along with a timestamp). For the weather sidebar, simpleWeather.js (a jQuery plugin) is used to grab weather information, which changes based on the location input, from the Yahoo Weather API. Additionally, Moment.js is being used for Unix time conversion and TypeIt.js is being used for animated typing effects. Lastly, the front-end design was built from the ground up using Google's Materialize CSS framework.</p>");
 
 	});
 
