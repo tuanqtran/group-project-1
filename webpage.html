@@ -3,24 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Group Project 1</title>
+	<!-- Reference to browser Favicon logo. -->
 	<link rel="icon" type="image/png" href="assets/images/logoicon.png"/>
-	<!-- Reference to css reset sheet. -->	
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <!--Import Google Icon Font-->
+	<!-- Reference to css reset.min css sheet. -->	
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.min.css">
+    <!-- Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- Reference to materialize css sheet. -->
-	<link rel="stylesheet" type="text/css" href="assets/css/materialize.css">
-	<!-- Reference to main css sheet. -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Reference to materialize.min css sheet. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/materialize.min.css">
+	<!-- Reference to main.min css sheet. -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
 	<!-- Ensures the page is mobile responsive. -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<!-- Left-fixed position that contains the logo, carousel image slider and collapsible info bar. Removes when the page strinks to or more than 768px.-->
 	<div class="myContainer hide-768px">
-		<!-- <a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' style="border-right: 1px solid white" href='#modal3'><h5>Logo</h5></a>   -->
-		<a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' style="border-right: 1px solid white" href='#modal3'><img class="logoimg" src="assets/images/logo.png"></a>   
+
+		<a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' href='#modal3'><img class="logoimg" src="assets/images/logo.png"></a>   
 		
+		<!-- Weather Data. -->
 		<div class="weather"></div>
 
 	</div> <!-- End of the myContainer div. -->
@@ -37,19 +39,14 @@
 	
 	<!-- Container for the google map api. -->
 	<div class="mapwrapper">
-
+		<!-- Thumb Up Image. -->
 		<div id="thumbUp">
 			<img id="fireBaseThumbUp" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Do you like our page?" src="assets/images/thumb-up.png" alt="">
-
-			<!-- <img id="fireBaseThumbUp" src="assets/images/thumb-up.png" alt=""> -->
-			<!-- <p id="thumbUpValue"></p> -->
 		</div>
-
+		
+		<!-- Thumb Down Image. -->
 		<div id="thumbDown">
 			<img id="firebaseThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Or...?" src="assets/images/thumb-down.png" alt="">
-
-			<!-- <img id="firebaseFakeThumbDown" src="assets/images/thumb-down.png" alt=""> -->
-			<!-- <p id="fakeThumbDownValue"></p> -->
 		</div>
 
 		<!-- Google Map Space -->
@@ -57,13 +54,15 @@
 		</div>
 	</div>  <!-- End of google map api. -->
 
-		<!-- Weather Info -->
+		<!-- Weather Info. -->
 		<div class="invisible">
 			<div id="slide-out" class="side-nav">
-			
+				
+				<!-- Container for the mobile weather data. -->
 				<div class="myNavContainer">
 					<a class='modal-trigger btn orange darken-2 empty-typewriter-text myContainer-width-adjustment myContainer-height-adjustment' href='#modal3'><img class="logoimg" src="assets/images/logo.png"></a>   
-
+					
+					<!-- Weather Data. -->
 					<div class="weather"></div>
 
 				</div>
@@ -247,131 +246,6 @@
 				
 			<div class="row">
 				<!-- Start of meetup info card boxes. -->
-<!-- 				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator eventImg" src="http://placehold.it/400x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col s6 m4 l2 center modal-card-margin">
-					<div class="card image-hover">
-						Current Meetup Image Container.
-						<div class="card-image waves-effect waves-block waves-black">
-							<img class="activator" src="http://placehold.it/275x250">
-						</div>
-						
-						Card title and weblink.
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-							<p><a href="#">This is a link</a></p>
-						</div>
-
-						Additional meetup info when card is revealed.
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-							<p>Here is some more information about this product that is only revealed once clicked on.</p>
-						</div>
-					</div>
-				</div> End of meetup info card boxes. -->
 			</div>
 	    </div>
 
@@ -533,12 +407,12 @@
 	<!-- Reference to jQuery version 2.2.3. -->
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"
 	></script>
-	<!-- Reference to Materialize javascript style sheet. -->
-	<script src="assets/javascript/materialize.js"></script>
-	<!-- Reference to Javascript style sheet. -->
-	<script src="assets/javascript/style.js"></script>
-	<!-- Reference to Typeit library. -->
-	<script src="assets/libraries/typeit-master/dev/typeit.js"></script>
+	<!-- Reference to Materialize.min javascript sheet. -->
+	<script src="assets/javascript/materialize.min.js"></script>
+	<!-- Reference to Javascript Style.min sheet. -->
+	<script src="assets/javascript/style.min.js"></script>
+	<!-- Reference to Typeit.min library. -->
+	<script src="assets/libraries/typeit-master/dev/typeit.min.js"></script>
 	<!-- Reference to Google Maps api. -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuj3o9FkNZuGQRckiKjVtHlybRDBRzofw&callback=initMap" async defer></script>
 	<!-- Reference to Simple Weather api. -->	
@@ -546,7 +420,7 @@
 	<!-- Reference to Moment.js library. -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 	<!-- Reference to our Javascript api file. -->	
-	<script src="assets/javascript/api.js"></script>
+	<script src="assets/javascript/api.min.js"></script>
 	<!-- Reference to Firebase.js. -->
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 	<!-- Reference to our Firebase.js file. -->

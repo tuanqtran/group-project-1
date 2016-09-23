@@ -19,313 +19,25 @@
 ***    ***    ***              ***    ***    ******    ***    ***              ***    ***    ***
 
 ================================================================================================
-	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
+								Linking to Google Ubuntu Font.
 ================================================================================================
 */
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
 
+/*
+================================================================================================
+				   Set all text font to Ubuntu with the fallback of Helvetica.
+================================================================================================
+*/
 body{
 	font-family: 'Ubuntu', Helvetica;
 }
 
-.eventTitle{
-	font-size: 1.2em !important;
-	line-height: 1.5 !important;
-}
-
-.eventClose{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-
-.card-content{
-	height: 150px;
-}
-
-
-.infoWindowClose{
-	top: -5px !important;
-	right: -5px !important;
-}
-
-.infoWindowSize{
-	width: 525px !important;
-}
-
-
-.main-text-padding{
-	width: 525px;
-}
-
-.text-padding{
-	margin-left: 20px;
-	width: 480px;
-}
-
-.text-padding img{
-	width: 480px;
-}
-
-.iw-container .iw-title {
-	width: 525px;
-	font-size: 22px;
-	font-weight: 400;
-	padding: 10px;
-	background-color: #f57c00;
-	color: white;
-	margin: 1px;
-	border-radius: 2px 2px 0 0;  /*In accordance with the rounding of the default infowindow corners.*/ 
-}
-
-
-.gm-style-iw {
-	width: 525px !important;
-	top: 0 !important;
-	left: 0 !important;
-	background-color: #fff;
-	/*box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);*/
-	box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
-	border: 1px solid rgba(72, 181, 233, 0.6);
-	border-radius: 2px 2px 0 0;
-}
-
-
-/*.infoWindow < div{*/
-	/*background-color: orange;*/
-	/*background-color: red;*/
-	/*font-size: 2em;*/
-/*}*/
-
-/*.gm-style-iw{
-	background-color: red;
-}*/
-
-.eventImg{
-	width: 228.19px;
-	height: 207.44px;
-}
-
-/*#iw-container  .iw-title {
-   font-family: 'Open Sans Condensed', sans-serif;
-   font-size: 22px;
-   font-weight: 400;
-   padding: 10px;
-   background-color: #48b5e9;
-   color: white;
-   margin: 1px;
-   border-radius: 2px 2px 0 0;  In accordance with the rounding of the default infowindow corners. 
-}*/
-
-/*.gm-style-iw {
-   width: 350px !important;
-   top: 0 !important;
-   left: 0 !important;
-   border-radius: 2px 2px 0 0;
-}
+/*
+================================================================================================
+	Created a 1.5 col offset. This allows me to center the creator card images in modal 4.
+================================================================================================
 */
-
-.searchIcon{
-	margin-top: 12.5px;
-}
-
-.collection{
-	cursor: pointer;
-}
-
-.myNavContainer{
-	background-color: #fff3e0;
-	max-width: 300px;
-	height: 100%;
-	position: relative;
-	float: left;
-}
-
-#fireBaseThumbUp, #firebaseThumbDown{
-	position: absolute;
-	z-index: 1;
-	-webkit-animation: wiggler 2s;
-    animation: wiggler 2s;
-}
-
-#fireBaseThumbUp{
-	top: 15px;
-	right: 100px;
-}
-
-#firebaseThumbDown{
-	top: 12px;
-	right: 15px;
-	-webkit-transition: 2s;
-    -moz-transition: 2s;
-    -ms-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s;
-}
-
-#firebaseThumbDown:hover{
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-#weatherImage{
-	position: relative;
-	left: 50px;
-}
-
-#weatherForecast{
-	float: left;
-	width: 300px;
-	height: 100%;
-}
-
-
-.weather {
-	overflow-x: hidden;
-	width: 100%;
-	height: 100%;
-	margin: 0px auto;
-	text-align: center;
-	text-transform: uppercase;
-	/*background: #1192d3 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/austin-2.jpg) no-repeat bottom right;*/
-}
-
-.weather ul {
-  margin-top: 100px;
-  border-top: 1px solid black;
-}
-
-.weather li {
-  /*background: rgba(0, 46, 76 , .2);*/
-  padding: 20px 0;
-  /*border-bottom: 1px solid black;*/
-  float: left;
-  /*width: 100%;*/
-  /*display: inline-block;*/
-  /*border-radius: 5px;*/
-}
-
-#weatherFullWidth{
-	width: 100%;
-	height: 100%;
-}
-
-#weatherLeftHalf, #weatherRightHalf{
-	border-bottom: 1px solid black;
-}
-
-#weatherLeftHalf, #weatherRightHalf{
-	width: 50%;
-	border-top: 1px solid black;
-}
-
-#weatherLeftHalf{
-	border-right: 1px solid black;
-}
-
-#weatherLink{
-	margin: 0 auto;
-	width: 100%;
-	height: 50px;
-	padding-top: 20px;
-	position: absolute;
-	left: 0px;
-	bottom: 50px;
-}
-
-#weatherLink:hover{
-	background-color: rgba(0, 46, 76 , .2);
-
-}
-/*#weatherLink{
-	position: absolute;
-	width: 100%;
-	height: calc(100% + 15px);
-	line-height: 4;
-	left: 0px;
-	top: 0px;
-}*/
-
-/*#weatherLink:hover{
-	background-color: rgba(0, 46, 76 , .2);
-}*/
-
-.weather h3{
-	font-size: 45px;
-}
-
-.tempwrapper{
-	position: relative;
-	left: 70px;
-}
-
-#currenttemp{
-	position: absolute;
-}
-
-.smalltempwrapper{
-	position: absolute;
-	left: 100px;
-	margin-top: 27.5px;
-	font-size: 1.3em;
-	clear: both;
-}
-
-#sidenav-overlay{
-	left: 300px;
-}
-
-
-#weatherSideNav{
-	position: absolute;
-	z-index: 1;
-	top: 30%;
-	left: -5px;
-	height: 50%;
-	width: 20px;
-	-webkit-transition: .5s;
-	transition: .5s;
-}
-
-#weatherSideNav:hover{
-	left: 0px;
-	-webkit-animation: weatherNavSlide .5s;
-    animation: weatherNavSlide .5s;
-}
-
-
-@-webkit-keyframes weatherNavSlide {
-	0% {left:-5px;}
-	100% {left: 0px;}
-}
-
-@keyframes weatherNavSlide {
-	0% {left:-5px;}
-	100% {left: 0px;}
-}
-
-.drag-target{
-	width: 0px;
-}
-.side-nav{
-	background-color: #fff3e0;
-	overflow-x: hidden;
-}
-
-.side-nav a.btn{
-	margin: 0px; 
-}
-
-::-webkit-scrollbar{
-	display:none;
-}
-
-.invisible{
-	display: none;
-}
 .row .col.offset-l1-5 {
 	margin-left: 12.49999999995%;
 }
@@ -336,7 +48,6 @@ body{
 ================================================================================================
 */
 .myContainer{
-	/*background-color: white;*/
 	background-color: #fff3e0;
 	max-width: 300px;
 	height: 100%;
@@ -344,6 +55,11 @@ body{
 	float: left;
 }
 
+/*
+================================================================================================
+				   Enlarges and Sets the position the Meetup Maps logo.			
+================================================================================================
+*/
 .logoimg{
 	position: relative;
 	width: 150px;
@@ -352,14 +68,6 @@ body{
 	left: 0px;
 }
 
-/*Logo for bottom right*/
-/*.logoimg{
-	position: absolute;
-	width: 167px;
-	height: 100px;
-	bottom: 50px;
-	right: 0px;
-}*/
 /*
 ================================================================================================
 			 Provides the content within the myContainer to fill in the space.
@@ -372,18 +80,13 @@ body{
 /*
 ================================================================================================
 				Provides the logo within the myContainer a fixed height.
+				      Adds a border to the right of the container.
 ================================================================================================
 */
 .myContainer-height-adjustment{
 	height: 50px;
+	border-right: 1px solid white
 }
-
-/* Debatable... */
-/*.image-placeholder{
-	width: 100%;
-	margin-bottom: -3px;
-}*/
-
 
 /*
 ================================================================================================
@@ -396,14 +99,6 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	right: 0;
 }
 
-.movedown{
-	position: absolute;
-	bottom: 0px;
-	height: 50px;
-	background-color: #f57c00;
-	border-right: 1px solid white;
-
-}
 /*
 ================================================================================================
 				  Pushes the bar to the top and given a fixed height of 50px. 
@@ -466,6 +161,400 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	width: 100%;
 	height: calc(100% - 100px);
 	position: absolute;
+}
+
+/*
+================================================================================================
+Set the thumbs to an absolute position and provides a wiggle animation at the start of the page.
+================================================================================================
+*/
+#fireBaseThumbUp, #firebaseThumbDown{
+	position: absolute;
+	z-index: 1;
+	-webkit-animation: wiggler 2s;
+    animation: wiggler 2s;
+}
+
+/*
+================================================================================================
+				    Moves the thumbs up content to the top right of the page.
+================================================================================================
+*/
+#fireBaseThumbUp{
+	top: 15px;
+	right: 100px;
+}
+
+/*
+================================================================================================
+				   Moves the thumbs down content to the top right of the page.
+================================================================================================
+*/
+#firebaseThumbDown{
+	top: 12px;
+	right: 15px;
+	-webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+}
+
+/*
+================================================================================================
+        Upon hovering over the thumbs down. Slowly rotate the thumb to a thumb up image. 
+================================================================================================
+*/
+#firebaseThumbDown:hover{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/*
+================================================================================================
+				Set the 'x' close button to the top right of its parent container.
+================================================================================================
+*/
+.infoWindowClose{
+	top: -5px !important;
+	right: -5px !important;
+}
+
+/*
+================================================================================================
+					   Set the preset Google InfoWindow to a fix width.
+================================================================================================
+*/
+.infoWindowSize{
+	width: 525px !important;
+}
+
+/*
+================================================================================================
+						Set the pushed InfoWindow text width to 525px.
+================================================================================================
+*/
+.main-text-width{
+	width: 525px;
+}
+
+/*
+================================================================================================
+						Allows the InfoWindow text to become centered.
+================================================================================================
+*/
+.text-padding{
+	margin-left: 22.5px;
+	width: 480px;
+}
+
+/*
+================================================================================================
+						        Centers the InfoWindow images.
+================================================================================================
+*/
+.text-padding img{
+	width: 480px;
+}
+
+/*
+================================================================================================
+								Fills the InfoWindow Header box.
+================================================================================================
+*/
+.iw-container .iw-title {
+	width: 525px;
+	font-size: 22px;
+	font-weight: 400;
+	padding: 10px;
+	background-color: #f57c00;
+	color: white;
+	margin: 1px;
+	border-radius: 2px 2px 0 0;
+}
+
+/*
+================================================================================================
+       Sets the preset Google InfoWindow Box to a certain width and moves the box top left.
+================================================================================================
+*/
+.gm-style-iw {
+	width: 525px !important;
+	top: 0 !important;
+	left: 0 !important;
+	background-color: #fff;
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
+	border: 1px solid rgba(72, 181, 233, 0.6);
+	border-radius: 2px 2px 0 0;
+}
+/*
+================================================================================================
+	 Keeps the left weather nav bar invisible until the screen shrinks into a mobile size.
+================================================================================================
+*/
+.invisible{
+	display: none;
+}
+
+/*
+================================================================================================
+		Sets the mobile nav container to a max width of 300px and light orange coloring.
+================================================================================================
+*/
+.myNavContainer{
+	background-color: #fff3e0;
+	max-width: 300px;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+
+/*
+================================================================================================
+						Sets the position of the current weather image.
+================================================================================================
+*/
+#weatherImage{
+	position: relative;
+	left: 50px;
+}
+
+/*
+================================================================================================
+					   Sets the position and size of the weather forecast.
+================================================================================================
+*/
+#weatherForecast{
+	float: left;
+	width: 300px;
+	height: 100%;
+}
+
+/*
+================================================================================================
+	  Provides the weather nav from scrolling left/right. Converts all text to uppercase.
+================================================================================================
+*/
+.weather {
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*
+================================================================================================
+				Sets the position and applies the border to the weather content.
+================================================================================================
+*/
+.weather ul {
+  margin-top: 100px;
+  border-top: 1px solid black;
+}
+
+/*
+================================================================================================
+			     Applies a top/bottom padding and positions the weather content.
+================================================================================================
+*/
+.weather li {
+  padding: 20px 0;
+  float: left;
+}
+
+/*
+================================================================================================
+					  Fills in the width/height of it's parent container.								
+================================================================================================
+*/
+#weatherFullWidth{
+	width: 100%;
+	height: 100%;
+}
+
+/*
+================================================================================================
+					 Applies a border to the bottom of the weather content.							
+================================================================================================
+*/
+#weatherLeftHalf, #weatherRightHalf{
+	border-bottom: 1px solid black;
+}
+
+/*
+================================================================================================
+	Sets the width of the current weather condition and humidity and provides a top border.						
+================================================================================================
+*/
+#weatherLeftHalf, #weatherRightHalf{
+	width: 50%;
+	border-top: 1px solid black;
+}
+
+/*
+================================================================================================
+									Applied a right border.							
+================================================================================================
+*/
+#weatherLeftHalf{
+	border-right: 1px solid black;
+}
+
+/*
+================================================================================================
+Positions the full forecast weather link to the bottom of the page, but above the latest content.						
+================================================================================================
+*/
+#weatherLink{
+	margin: 0 auto;
+	width: 100%;
+	height: 50px;
+	padding-top: 20px;
+	position: absolute;
+	left: 0px;
+	bottom: 50px;
+}
+
+/*
+================================================================================================
+					    Upon hovering, applies a transparent blue coloring.					
+================================================================================================
+*/
+#weatherLink:hover{
+	background-color: rgba(0, 46, 76 , .2);
+}
+
+/*
+================================================================================================
+				            Sets the font-size of the current weather.							
+================================================================================================
+*/
+.weather h3{
+	font-size: 45px;
+}
+
+/*
+================================================================================================
+							   Positions the current temperature. 			
+================================================================================================
+*/
+.tempwrapper{
+	position: relative;
+	left: 70px;
+}
+
+/*
+================================================================================================
+					Provides an absolute positioning to allow easier
+							manipulation of the the H/L temp.					
+================================================================================================
+*/
+#currenttemp{
+	position: absolute;
+}
+
+/*
+================================================================================================
+			  Positions the H/L temp to the right of the current temperature.			
+================================================================================================
+*/
+.smalltempwrapper{
+	position: absolute;
+	left: 100px;
+	margin-top: 27.5px;
+	font-size: 1.3em;
+	clear: both;
+}
+
+/*
+================================================================================================
+		    Pushes the preset Materialize overlay away from the weather Nav bar.
+================================================================================================
+*/
+#sidenav-overlay{
+	left: 300px;
+}
+
+/*
+================================================================================================
+		  Positions the clickable nav bar to the slightly pass the left of the page.				
+================================================================================================
+*/
+#weatherSideNav{
+	position: absolute;
+	z-index: 1;
+	top: 30%;
+	left: -5px;
+	height: 50%;
+	width: 20px;
+	-webkit-transition: .5s;
+	transition: .5s;
+}
+
+/*
+================================================================================================
+		    Upon hovering over the weather nav, slide the nav back into the page.		
+================================================================================================
+*/
+#weatherSideNav:hover{
+	left: 0px;
+	-webkit-animation: weatherNavSlide .5s;
+    animation: weatherNavSlide .5s;
+}
+
+/*
+================================================================================================
+			   Pushes the lastest weather updates to the bottom of the page.
+================================================================================================
+*/
+.weatherLatestUpdate{
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	background-color: #f57c00;
+	border-right: 1px solid white;
+
+}
+/*
+================================================================================================
+	   Removes Materilize preset width to allow the weatherSideNav to become clickable.			
+================================================================================================
+*/
+.drag-target{
+	width: 0px;
+}
+
+/*
+================================================================================================
+			    Prevents the weather side-nav from scrolling left and right.			
+================================================================================================
+*/
+.side-nav{
+	background-color: #fff3e0;
+	overflow-x: hidden;
+}
+
+/*
+================================================================================================
+	 		Allows the meet up maps header within the mobile nav to be centered.		
+================================================================================================
+*/
+.side-nav a.btn{
+	margin: 0px; 
+}
+
+/*
+================================================================================================
+						Removes thhe scroll bar from Google Chrome.				
+================================================================================================
+*/
+::-webkit-scrollbar{
+	display:none;
 }
 
 /*
@@ -641,7 +730,7 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 */
 .image-circle-modal:hover{
-	transform: scale(1.1);		
+	transform: scale(1.1);
 }
 
 /*
@@ -653,6 +742,23 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	transform: scale(1.2);
 }
 
+/*
+================================================================================================
+				Vertically align the search Icon in the preset click boxes.
+================================================================================================
+*/
+.searchIcon{
+	margin-top: 12.5px;
+}
+
+/*
+================================================================================================
+			   Changes the cursor when hovering over the preset click boxes.
+================================================================================================
+*/
+.collection{
+	cursor: pointer;
+}
 /*
 ================================================================================================
 ================================================================================================
@@ -730,7 +836,7 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 ================================================================================================
 ================================================================================================
 
-        						   End of materlize input changes.
+        						   End of materialize input changes.
 
 ================================================================================================
 ================================================================================================
@@ -769,6 +875,45 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 	opacity: 0.7;
 	-webkit-filter: blur(5px);
 	filter: blur(5px);
+}
+
+/*
+================================================================================================
+					 Sets the preset Materialize title font size to 1.2em.
+================================================================================================
+*/
+.eventTitle{
+	font-size: 1.2em !important;
+	line-height: 1.5 !important;
+}
+/*
+================================================================================================
+			   Moves the 'x' close button to the top right of every card content.
+================================================================================================
+*/
+.eventClose{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+/*
+================================================================================================
+	Sets the height of the bottom card content. Which allows all cards to be a set height.
+				   (Provides a fix to event cards moving in irregular places.)
+================================================================================================
+*/
+.card-content{
+	height: 150px;
+}
+
+/*
+================================================================================================
+						Provides a set width/height for the event image.
+================================================================================================
+*/
+.eventImg{
+	width: 230px;
+	height: 210px;
 }
 
 /*
@@ -840,8 +985,6 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 */
 .profile-pic{
 	margin-bottom: 15px;
-	width: 300px;
-	height: 300px;
 }
 
 /*
@@ -953,6 +1096,20 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
     100% {color: #ff6f00;}
 }
 
+/*
+================================================================================================
+						  Pushes the Weather Nav bar back into the page.	
+================================================================================================
+*/
+@-webkit-keyframes weatherNavSlide {
+	0% {left:-5px;}
+	100% {left: 0px;}
+}
+
+@keyframes weatherNavSlide {
+	0% {left:-5px;}
+	100% {left: 0px;}
+}
 /*
 ================================================================================================
 					  Provides a orange and white border under the search box. 
@@ -1175,70 +1332,121 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 
 @media screen and (max-width:768px){
 
-	.iw-container .iw-title {
+/*
+================================================================================================
+							    Fills the InfoWindow Header box.
+================================================================================================
+*/
+	.iw-container .iw-title{
 		width: 220px;
+		font-size: 16px;
 	}
 
-	.gm-style-iw {
+/*
+================================================================================================
+       			  Sets the preset Google InfoWindow Box to a certain width.
+================================================================================================
+*/
+	.gm-style-iw{
 	   width: 220px !important;
 
 	}
 
+/*
+================================================================================================
+				Set the 'x' close button to the top right of its parent container.
+================================================================================================
+*/
 	.infoWindowClose{
 		top: -5px !important;
 		right: -5px !important;
 	}
 
+/*
+================================================================================================
+					   Set the preset Google InfoWindow to a fix width.
+================================================================================================
+*/
 	.infoWindowSize{
 		width: 220px !important;
 	}
 
-
-	.main-text-padding{
+/*
+================================================================================================
+						Set the pushed InfoWindow text width to 200px.
+================================================================================================
+*/
+	.main-text-width{
 		width: 200px;
 	}
 
+/*
+================================================================================================
+						Allows the InfoWindow text to become centered.
+================================================================================================
+*/
 	.text-padding{
 		margin-left: 10px;
 		width: 200px;
 	}
 
+/*
+================================================================================================
+						        Centers the InfoWindow images.
+================================================================================================
+*/
 	.text-padding img{
 		width: 200px;
 	}
 
-	.iw-container .iw-title {
-	   font-size: 16px;
-	}
-
-
-	.gm-style-iw {
+/*
+================================================================================================
+       			  Sets the preset Google InfoWindow Box to a certain width.
+================================================================================================
+*/	.gm-style-iw{
 	   width: 225px !important;
 	}
 
+/*
+================================================================================================
+								 Resizes the thumbs images.
+================================================================================================
+*/
 	#fireBaseThumbUp, #firebaseThumbDown{
 		width: 25px;
 	}
 
+/*
+================================================================================================
+								Repositioning of the thumb up.
+================================================================================================
+*/
 	#fireBaseThumbUp{
 		top: 10px;
 		right: 50px;
 	}
 
-	.tooltipped{
-	}
-	.movedown{
+/*
+================================================================================================
+						  Repositioning of the lastest weather update.
+================================================================================================
+*/
+	.weatherLatestUpdate{
 		position: relative;
 		bottom: 60px;
 	}
 
+/*
+================================================================================================
+					    Repositioning of the full forecast weather link.
+================================================================================================
+*/
 	#weatherLink{
 		position: relative;
 		float: left;
 		padding-bottom: 5px;
 		padding-top: 0px;
 	}
-
 
 /*
 ================================================================================================
@@ -1270,7 +1478,7 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 
 /*
 ================================================================================================
-							 Need to fix this
+							 Displays the clickable weather nav.
 ================================================================================================
 */
 	.invisible{

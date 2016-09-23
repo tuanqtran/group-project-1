@@ -17,7 +17,6 @@ $(document).ready(function(){
     	accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
 	});
 
-
     // Upon hovering over a modal2 images, expand the main modal and strink/blur the rest. When the mouse leaves reset to normal.
 	// $(".image-hover").mouseover(function(){
 	// 	$(".image-hover").addClass("image-temp");
@@ -48,21 +47,6 @@ $(document).ready(function(){
 			.addClass("image-hover");
 	});
 
-
-
-	// $(".modal-highlight").mouseover(function(){
-	// 	$(".modal-highlight").addClass("modal-temp");
-	// 	$(this).addClass("modal-active")
-	// 		.removeClass("modal-highlight");
-
-	// 	$(".modal-highlight").addClass("modal-nonactive")
-	// 		.removeClass("modal-highlight");
-	// }).mouseleave(function(){
-	// 	$(".modal-temp").removeClass("modal-active")
-	// 		.removeClass("modal-nonactive")
-	// 		.addClass("modal-highlight");
-	// });
-
 	// When hovering over the modal 4 icons container. Enlarge the chosen icon and decrease the rest.
 	$(".linkAnimation").mouseover(function(){
 		$(this).children().children().children().addClass("portfolio-icon-enlarge");
@@ -88,17 +72,6 @@ $(document).ready(function(){
 
 	});
 
-	// $(".modal-footer .btn-flat").keypress(function(event){
-		// if (event.which == 13) {
-		// 	alert("hey");
-		// }
-	// });
-
-	// $(".modal-footer .btn-flat").on("click", function(){
-	// 	alert("hey");
-	// });
-
-
 	// Upon clicking any of the modal 3 references. Empty the story p tag and reappend the story tag to apply the typerwrite effect.
 	$(".empty-typewriter-text").one("click",function(){
 
@@ -111,6 +84,7 @@ $(document).ready(function(){
 
 	});
 
+	// Type-it auto text.
 	$(".topwrapper .type-it-text").one("click", function(){
 
 		$('.type-it').typeIt({

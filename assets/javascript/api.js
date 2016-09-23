@@ -98,7 +98,7 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 				});
 
 				// Concatenates objects from the 'eventInfo' array and sets it equal to the var 'contentString', which is then used within the 'infowindow' pop-up that appears whenever a map marker is clicked.
-				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><br><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><div class="center"><a href=' + eventInfo[i].eventLink + ' target="_blank">Meetup Link</a></div></div></div></div>';
+				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><br><div class="main-text-width"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><div class="center"><a href=' + eventInfo[i].eventLink + ' target="_blank">Meetup Link</a></div></div></div></div>';
 				// Continued concatenation of objects from the 'eventInfo' array and sets it equal to the var 'eventAdder', which is then embedded within the 'modal2 cards'.
 				eventAdder = '<div class="col s12 m4 l2 center modal-card-margin"><div class="card image-hover"><div class="card-image waves-effect waves-block waves-black">' +
 					'<img class="activator eventImg" src=' + eventInfo.eventPhoto + '></div><br><div class="card-content"><span class="card-title activator grey-text text-darken-4 eventTitle">' +
@@ -168,7 +168,7 @@ function getWeather() {
 	            html += '<img src=' + weather.forecast[i].thumbnail + '><p>' + weather.forecast[i].day + ': ' + weather.forecast[i].high + "&deg;F</p>";
 	        };
 	        html += '</div><div id="weatherLink"><a href="' + weather.link + '"target="_blank">Full Forecast Here</a></div>';
-	        html += '<div><p class="movedown valign-wrapper white-text">Last updated: '+ weather.updated +'</p></div>';
+	        html += '<div><p class="weatherLatestUpdate valign-wrapper white-text">Last updated: '+ weather.updated +'</p></div>';
 
 			$(".weather").html(html);
 		},
