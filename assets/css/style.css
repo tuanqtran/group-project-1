@@ -840,6 +840,8 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 */
 .profile-pic{
 	margin-bottom: 15px;
+	width: 300px;
+	height: 300px;
 }
 
 /*
@@ -1172,9 +1174,9 @@ Fixed positioning allows us to push 300px of the space left off and positioning 
 }
 
 @media screen and (max-width:768px){
+
 	.iw-container .iw-title {
 		width: 220px;
-
 	}
 
 	.gm-style-iw {
