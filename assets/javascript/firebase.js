@@ -22,13 +22,11 @@
 
   // At the initial load, get a snapshot of the current data.
   database.ref().on("value", function(snapshot) {
-      console.log(snapshot.val());
+
       // Change the clickcounter to match the data in the database
       clickCounter = snapshot.val().ourCounters.likeCounter;
       clickCounter2 = snapshot.val().ourCounters.dislikeCounter;
       clickCounter3 = snapshot.val().ourCounters.mehCounter;
-
-      console.log(id);
 
       $(".thumbUp").attr("data-tooltip", clickCounter);
       $(".fakeThumbDown").attr("data-tooltip", clickCounter2);
@@ -106,7 +104,6 @@
       userTextInput = $("#textInput").val();
       userLocationInput = $("#locationInput").val();
       userResultInput = $("#resultsNumInput").val();
-      console.log(userTextInput);
 
       var time = new Date();
 
@@ -134,7 +131,6 @@
       userTextInput = $(this).children('.title').text();
       userLocationInput = "Austin, TX";
       userResultInput = 30;
-      console.log(userTextInput);
 
       var time = new Date();
 

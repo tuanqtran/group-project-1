@@ -19,32 +19,6 @@ function initMap() {
     geocoder = new google.maps.Geocoder;
     infowindow = new google.maps.InfoWindow;
     getWeather();
-  //   var styledMapType = new google.maps.StyledMapType(
-		// [
-		// 	{
-		// 		stylers: [
-		// 			{ hue: '#000' },
-		// 			{ saturation: 0 }
-		// 		]
-		// 	},{
-		// 		featureType: 'road',
-		// 		elementType: 'geometry',
-		// 		stylers: [
-		// 			{ lightness: 100 },
-		// 			{ visibility: 'simplified' }
-		// 		]
-		// 	},{
-		// 		featureType: 'road',
-		// 		elementType: 'labels',
-		// 		stylers: [
-		// 			{ visibility: 'off' }
-		// 		]
-		// 	}
-		// ],
-		// {name: 'Styled Map'});
-
-  //   map.mapTypes.set('styled_map', styledMapType);
-  //   map.setMapTypeId('styled_map');
 };
 
 $('.modal-content').on('keyup', function(event) {
@@ -118,7 +92,7 @@ $(document).on('click', '#searchBtn, .collection-item', (function(event) {
 
 				// http://www.bannermanburke.co.uk/images/noImageFound.jpg
 				// Concatenates objects from the 'eventInfo' array and sets it equal to the var 'contentString', which is then used within the 'infowindow' pop-up that appears whenever a map marker is clicked.
-				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><br><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup.com Event Link</a></div></div></div>';
+				contentString = '<div class="iw-container"><div class="iw-title center">' + eventInfo[i].eventName + '</div><br><div class="main-text-padding"><div class="text-justify text-padding">' + eventInfo[i].eventDescription + '<br><a href=' + eventInfo[i].eventLink + '>Meetup Link</a></div></div></div>';
 				
 				eventAdder = '<div class="col s6 m4 l2 center modal-card-margin"><div class="card image-hover"><div class="card-image waves-effect waves-block waves-black">' +
 					'<img class="activator eventImg" src=' + eventInfo.eventPhoto + '></div><br><div class="card-content"><span class="card-title activator grey-text text-darken-4 eventTitle">' +
