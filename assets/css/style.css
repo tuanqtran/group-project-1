@@ -27,10 +27,34 @@
 /*
 ================================================================================================
 				   Set all text font to Ubuntu with the fallback of Helvetica.
+		   Upon loading the page for the first time, call the fadein keyframe animation.
 ================================================================================================
 */
 body{
+	background-color: black;
 	font-family: 'Ubuntu', Helvetica;
+    -moz-animation: fadein 0.8s ease-in; /* Firefox */
+    -webkit-animation: fadein 0.8s ease-in; /* Safari and Chrome */
+    -o-animation: fadein 0.8s ease-in; /* Opera */	
+    animation: fadein 0.8s ease-in;
+}
+
+/*
+================================================================================================
+											Bold Text
+================================================================================================
+*/
+strong{
+	font-weight: bold;
+}
+
+/*
+================================================================================================
+									  Apply height to text.
+================================================================================================
+*/
+.line-height{
+	line-height: 1.2;
 }
 
 /*
@@ -1095,6 +1119,82 @@ Positions the full forecast weather link to the bottom of the page, but above th
     50% {color: #ffca28;}
     100% {color: #ff6f00;}
 }
+
+/*
+================================================================================================
+									   Changes the opacity.
+================================================================================================
+*/
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-moz-keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-webkit-keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+@-o-keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+
 
 /*
 ================================================================================================

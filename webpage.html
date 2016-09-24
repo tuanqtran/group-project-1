@@ -41,13 +41,16 @@
 	<div class="mapwrapper">
 		<!-- Thumb Up Image. -->
 		<div id="thumbUp">
-			<img id="fireBaseThumbUp" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Do you like our page?" src="assets/images/thumb-up.png" alt="">
+			<a onclick="Materialize.toast('Thanks for liking!', 4000, 'rounded')"><img id="fireBaseThumbUp" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Do you like our page?" src="assets/images/thumb-up.png" alt=""></a>
+			<!-- <img id="fireBaseThumbUp" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Do you like our page?" src="assets/images/thumb-up.png" alt=""> -->
 		</div>
 		
 		<!-- Thumb Down Image. -->
 		<div id="thumbDown">
-			<img id="firebaseThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Or...?" src="assets/images/thumb-down.png" alt="">
-		</div>
+			<a onclick="Materialize.toast('Ahh... Thanks for liking!', 4000, 'rounded')"><img id="firebaseThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Or...?" src="assets/images/thumb-down.png" alt=""></a>
+
+			<!-- <img id="firebaseThumbDown" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Or...?" src="assets/images/thumb-down.png" alt="">
+ -->		</div>
 
 		<!-- Google Map Space -->
 		<div id="map">
@@ -243,6 +246,7 @@
 	<div id="modal2" class="modal">
 		<div class="modal-content">
 			<h4 class="center">Events</h4>
+			<br>
 				
 			<div class="row">
 				<!-- Start of meetup info card boxes. -->
@@ -279,7 +283,9 @@
 	<div id="modal4" class="modal bottom-sheet">
 		<div class="row">
 			<div class="col s12">
+				<br>
 				<h4 class="center">Meet the Creators!</h4>
+				<br>
 			</div>
 			
 			<!-- Start of creators info box. -->
@@ -316,7 +322,9 @@
 					<!-- Additional creator info. -->
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Tuan Tran's Bio<i class="material-icons right eventClose">close</i></span>
-						<p class="text-justify"><br>Here is some more information about this product that is only revealed once clicked on. Here is some more information about this product that is only revealed once clicked on. Here is some more information about this product that is only revealed once clicked on.</p>
+						<p class="text-justify line-height"><br><strong>Tuan</strong> graduated from Lamar University with a B.S. in Electrical Engineering and Minor in Mathematics. He developed an autonomous solar power charging station and has prior experience in Programmable Logic Controller (PLC) Programming.</p>
+						<br>
+						<p class="text-justify line-height">Prior to starting the UT Coding Camp,  he was a Volunteer Coordinator and Lion Dancer for the Buu Mon Buddhist Temple, and Culture Leader for Lamar University International Student Council. Recently, he helped “Keep Austin Beautiful” alongside 4,000 plus volunteers removing 29 tons of trash within Austin, Texas.</p>
 					</div>
 				</div>
 			</div>
@@ -341,7 +349,7 @@
 
 							<!-- Linkedin Link -->
 							<div class="col s4 green linkAnimation icon-margin-change portfolio-border">
-								<a href="#" target="_blank"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/linkedin.png"></p></a>
+								<a href="https://www.linkedin.com/in/marcus-lam-08427812a" target="_blank"><p class="center-align"><img class="portfolio-image" src="assets/portfolio/linkedin.png"></p></a>
 							</div>
 
 							<!-- Twitter Link -->
@@ -350,11 +358,13 @@
 							</div>
 						</div>
 					</div>
-					
+			
 					<!-- Additional creator info. -->
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Marcus Lam's Bio<i class="material-icons right eventClose">close</i></span>
-						<p class="text-justify"><br>Here is some more information about this product that is only revealed once clicked on.</p>
+						<p class="text-justify line-height"><br><strong>Marcus</strong> graduated summa cum laude (4.0 GPA) from Virginia Commonwealth University with a B.S. in Economics. Despite his academic discipline, he has always been interested in technology. He started gaming when he was five and built his first computer when he was ten.</p>
+						<br>
+						<p class="text-justify line-height">Originally born in Hong Kong, Marcus has been moving around his whole life; he has lived in Hong Kong, Shanghai, Richmond, Houston, Toronto, and Austin. Currently, he is attending the Coding Bootcamp @ UT Austin with an expected graduation date of January 2017.</p>
 					</div>
 				</div>
 			</div>
@@ -392,7 +402,9 @@
 					<!-- Additional creator info. -->
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Brandon Short's Bio<i class="material-icons right eventClose">close</i></span>
-						<p class="text-justify"><br>Brandon Short won the Nobel Prize for Computing, twice. He invented air. He’s currently the head of Amazingness at Wonderment University.</p>
+						<p class="text-justify line-height"><br><strong>Brandon</strong> graduated from the University of Wisconsin - Milwaukee in 2011 with a B.S. in Communication. He moved to Austin in November 2013 to escape the arctic winters of the north and has no plans of going back.</p>
+						<br>
+						<p class="text-justify line-height">After spending many years of his life trying to deny that he is a computer nerd, he has finally accepted his true calling and began developer training in 2016 at the Coding Bootcamp @ UT Austin. He is looking forward to a career as a full stack developer and many more hours on the Internet.</p>
 					</div>
 				</div>
 			</div> <!-- End of creators info box. -->
